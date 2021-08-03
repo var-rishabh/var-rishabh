@@ -1,5 +1,5 @@
-###### Hi there, this is Rishabh 👋
-
+### Hi there, this is Rishabh 👋
+---
 <!--
 **var-rishabh/var-rishabh** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
