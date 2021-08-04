@@ -12,6 +12,8 @@
 
 - 👨‍👦‍👦 My partners: <a href="https://github.com/siddastic">Siddhant</a> & <a href="https://github.com/nazims-flow">Nazim</a>
 
+- ☢ My friends call me **Radioactive**.
+
 - ⚡ Other intrest : I love to play volleyball 🏐
 
 ---
