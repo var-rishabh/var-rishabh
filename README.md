@@ -46,8 +46,8 @@
 
 ---
 
-<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&show_icons=true&locale=en&layout=compact&bg_color=151515&title_color=fe53bb&text_color=fff" alt="var-rishabh" /> 
+<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&show_icons=true&locale=en&layout=compact&bg_color=fff&title_color=fe53bb&text_color=000" alt="var-rishabh" /> 
 <br>
 <br><br><br><br>
 
-<img align="left" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&title_color=fe53bb&bg_color=151515&text_color=fff&icon_color=f5d300" alt="var-rishabh" />
+<img align="left" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&title_color=fe53bb&bg_color=fff&text_color=000&icon_color=f5d300" alt="var-rishabh" />
