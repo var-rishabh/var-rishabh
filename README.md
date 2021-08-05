@@ -50,4 +50,4 @@
 <br>
 <br><br><br><br>
 
-<img align="left" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&title_color=e11584&bg_color=fff&text_color=000&icon_color=f5d300" alt="var-rishabh" />
+<img align="left" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&title_color=e11584&bg_color=fff&text_color=000&icon_color=f77f00" alt="var-rishabh" />
