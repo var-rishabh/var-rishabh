@@ -18,7 +18,7 @@
 
 ---
 
-<img align="right" width="350px" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Fgithub%2Fgithub_PNG93.png&f=1&nofb=1">
+<img align="right" width="350px" src="http://basbrands.nl/presentation/pictures/bbrands/octobiwan.png">
 
 > <h3 align="left">Connect with me:</h3>
 <p align="left">
