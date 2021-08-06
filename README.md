@@ -4,17 +4,17 @@
 
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=var-rishabh&label=Profile%20views&color=0e75b6&style=flat" alt="var-rishabh" /> </p>
 
-- 🔭 I’m currently working on a e-commerce website for watches - **Caesium**
+- 🔭 I’m currently working on a e-commerce website for watches - **`Caesium`**
 
-- 🌱 I’m currently learning **React JS**
+- 🌱 I’m currently learning **`React JS`**
 
-- 📫 Always available at **right.rishabh@gmail.com**
+- 📫 Always available at **[`right.rishabh@gmail.com`](mailto:right.rishabh@gmail.com)**
 
-- 👨‍👦‍👦 My partners: <a href="https://github.com/siddastic">Siddhant</a> & <a href="https://github.com/nazims-flow">Nazim</a>
+- 👬 My partners: <a href="https://github.com/siddastic" style="text-decoration:none;">`Siddhant`</a> & <a href="https://github.com/nazims-flow">`Nazim`</a>
 
-- ☢ My friends call me **Radioactive**.
+- ☢ My friends call me **`Radioactive`**.
 
-- ⚡ Other intrest : I love to play volleyball 🏐
+- ⚡ Other intrest : `volleyball 🏐` | `Astronomy 🔭`
 
 ---
 
@@ -46,8 +46,8 @@
 
 ---
 
-<img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&show_icons=true&locale=en&layout=compact&bg_color=fff&title_color=e11584&text_color=000" alt="var-rishabh" /> 
-<br>
-<br><br><br><br>
+### Stats 📊
 
-<img align="left" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&title_color=e11584&bg_color=fff&text_color=000&icon_color=f77f00" alt="var-rishabh" />
+<img align="center" title="My Github Stats" alt="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&count_private=true&hide=issues&show_icons=true" />
+
+<img align="center" title="My Top Languages" alt="My Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=var-rishabh&hide=jupyter%20notebook&layout=compact" />
