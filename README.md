@@ -47,7 +47,6 @@
 ---
 
 ### Stats 📊
-
 <img align="center" title="My Github Stats" alt="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&count_private=true&hide=issues&show_icons=true" />
 
 <img align="center" title="My Top Languages" alt="My Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=var-rishabh&hide=jupyter%20notebook&layout=compact" />
