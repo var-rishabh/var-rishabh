@@ -50,6 +50,10 @@
 ---
 
 ### Stats 📊
-<img align="center" title="My Github Stats" alt="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&count_private=true&hide=issues&show_icons=true" />
+<img align="center" title="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&locale=en" alt="var-rishabh" />
+
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&theme=tokyonight&show_icons=true&locale=en&layout=compact" alt="var-rishabh" />
 
 <img align="center" title="My Top Languages" alt="My Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=var-rishabh&hide=jupyter%20notebook&layout=compact" />
+
+<p align="center">&nbsp;<img width="480" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=tokyonight&show_icons=true&locale=en" alt="var-rishabh" /></p>
