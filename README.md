@@ -6,9 +6,7 @@
 
 - 🔭 I’m currently working on a website for watches - <a href="https://github.com/var-rishabh/caesium">**`Caesium`**</a>
 
-- 🖥 And also making an `Instagram Web Clone` from ReactJS.
-
-- 🌱 I’m currently learning **`React JS`**
+- 🌱 I’m currently doing DSA with C++.
 
 - 📫 Always available at **[`right.rishabh@gmail.com`](mailto:right.rishabh@gmail.com)**
 
