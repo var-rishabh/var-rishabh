@@ -14,7 +14,7 @@
 
 - ☢ My friends call me **`Radioactive`**.
 
-- ⚡ Other intrest : `volleyball 🏐` | `Astronomy 🔭`
+- ⚡ Other interest : `volleyball 🏐` | `Astronomy 🔭`
 
 ---
 
