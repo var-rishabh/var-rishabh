@@ -18,7 +18,7 @@
 
 ---
 
-<img align="right" width="350px" src="http://basbrands.nl/presentation/pictures/bbrands/octobiwan.png">
+<img align="right" width="350px" src="APS-OCTOCAT.png">
 
 > <h3 align="left">Connect with me:</h3>
 <p align="left">
