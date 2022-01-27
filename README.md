@@ -2,8 +2,6 @@
 
 > <h3 align="left">A passionate full stack developer from India.</h3>
 
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=var-rishabh&label=Profile%20views&color=blue&style=flat" alt="var-rishabh" /> </p>
-
 - 🔭 I’m currently working on a website for watches - <a href="https://github.com/var-rishabh/caesium">**`Caesium`**</a>
 
 - 🌱 I’m currently doing DSA with C++.
