@@ -49,12 +49,10 @@
 
 ---
 
-<details>
-  <summary> Stats 📊</summary>
   <br>
-  <img align="center" title="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&locale=en" alt="var-rishabh" />
-  <br> <br>
+  <img align="center" title="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&locale=en&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=38d252&point=1f6fea&color=fefefe" alt="var-rishabh" />
+  <br>
   <img src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&show_icons=true&locale=en&layout=compact" align="center" title="My Top Languages" alt="My Top Languages" />
-  <br> <br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&color=dodgerblue&show_icons=true&locale=en" alt="var-rishabh" />
-</details>
+  <br>
+ <p> <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=github-dark&hide_border=true" alt="var-rishabh"/></p>
+  
