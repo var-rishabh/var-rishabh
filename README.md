@@ -50,9 +50,9 @@
 ---
 
   <br>
-  <img align="center" title="My Github Stats" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&show_icons=true&locale=en&theme=github&hide_border=true" alt="var-rishabh" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=var-rishabh&theme=gotham&show_icons=true&hide_border=false" alt="var-rishabh" />
   <br>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&show_icons=true&locale=en&layout=compact" align="center" title="My Top Languages" alt="My Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=var-rishabh&show_icons=true&layout=compact&hide_border=false&theme=gotham" align="center" title="My Top Languages" alt="My Top Languages" />
   <br>
- <p> <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=github-dark&hide_border=true" alt="var-rishabh"/></p>
+ <p> <img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=gotham&hide_border=false" alt="var-rishabh"/></p>
   
