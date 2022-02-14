@@ -16,7 +16,7 @@
 
 ---
 
-<img align="right" width="350px" src="APS-OCTOCAT.png">
+<img align="right" width="300px" src="APS-OCTOCAT.png">
 
 > <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -24,10 +24,7 @@
 <a href="https://fb.com/radioactive.var" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="radioactive.var" height="30" width="40" /></a>
 <a href="https://www.linkedin.com/in/rishabh-varshney-73a280210/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="rishabh._.varshney" height="30" width="40" /></a>
 <a href="https://twitter.com/var_rishabh/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="var-rishabh" height="30" width="40" /></a>  
-  
 </p>
-
-<br>
 
 > <h3 align="left">Languages and Tools:</h3>
 <p align="left"> 
@@ -52,8 +49,9 @@
 
 [![GitHub stats](https://github-readme-stats.vercel.app//api?username=var-rishabh&theme=gotham&show_icons=true&include_all_commits=true&hide_border=true&bg_color=0d1117&title_color=38d252&icon_color=1f6fea&text_color=fefefe )](https://github.com/anuraghazra/github-readme-stats)
 
-<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=github-dark&hide_border=true" alt="var-rishabh"/>
 
 ![Activity Graph](https://activity-graph.herokuapp.com/graph?username=var-rishabh&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=38d252&point=1f6fea&color=fefefe)
+
+<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=github-dark&hide_border=true" alt="var-rishabh"/>
 
 [![Top Langs](https://github-readme-stats.vercel.app//api/top-langs/?username=var-rishabh&layout=compact&theme=gotham&langs_count=10&hide_border=true&true&bg_color=0d1117&text_color=fefefe)](https://github.com/anuraghazra/github-readme-stats)
