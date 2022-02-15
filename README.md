@@ -43,8 +43,8 @@
   <a href="https://www.photoshop.com/en" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> 
   
 ---
-
-[![GitHub stats](https://github-readme-stats.vercel.app//api?username=var-rishabh&theme=gotham&show_icons=true&include_all_commits=true&hide_border=true&bg_color=0d1117&title_color=38d252&icon_color=1f6fea&text_color=fefefe )](https://github.com/anuraghazra/github-readme-stats)
+ 
+![Rishabh's Github Stats](https://github-readme-stats.vercel.app//api?username=var-rishabh&show_icons=true&theme=gotham&hide_border=true&bg_color=0d1117&title_color=38d252&icon_color=1f6fea&text_color=fefefe)
  
 ![Activity Graph](https://activity-graph.herokuapp.com/graph?username=var-rishabh&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=38d252&point=1f6fea&color=fefefe)
 
