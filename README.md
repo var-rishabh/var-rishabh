@@ -16,7 +16,7 @@
 
 ---
 
-<img align="right" width="300px" src="APS-OCTOCAT.png">
+<img align="right" width="300px" src="https://www.pinclipart.com/picdir/big/90-907332_json-at-master-github-octocat-clipart.png">
 
 > <h3 align="left">Connect with me:</h3>
 <p align="left">
