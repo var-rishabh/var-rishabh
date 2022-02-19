@@ -4,7 +4,7 @@
 
 - 🔭 I’m currently working on a website for watches - <a href="https://github.com/var-rishabh/caesium">**`Caesium`**</a>
 
-- 🌱 I’m currently doing DSA with C++.
+- 🌱 I’m currently learning DSA with C++.
 
 - 📫 Always available at **[`right.rishabh@gmail.com`](mailto:right.rishabh@gmail.com)**
 
