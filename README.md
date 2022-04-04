@@ -4,7 +4,7 @@
 
 - 🔭 I’m currently working on Smart India Hackathon problem statement - <a href="https://github.com/var-rishabh/sih">**`Student Unique ID Generation`**</a>
 
-- 🌱 I’m currently learning DSA with C++.
+- 🌱 I’m currently learning React.
 
 - 📫 Always available at **[`right.rishabh@gmail.com`](mailto:right.rishabh@gmail.com)**
 
