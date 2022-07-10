@@ -2,7 +2,7 @@
 
 > <h3 align="left">A passionate full stack developer from India.</h3>
 
-- 🔭 I’m currently working on Smart India Hackathon problem statement - <a href="https://github.com/var-rishabh/sih">**`Student Unique ID Generation`**</a>
+- 🔭 I’m currently working on <a href="https://github.com/var-rishabh/instagram-clone">**`Instagram Clone`**</a>
 
 - 🌱 I’m currently learning Typescript.
 
