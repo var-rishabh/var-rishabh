@@ -46,10 +46,10 @@
   
 ---
  
-![Rishabh's Github Stats](https://github-readme-stats.vercel.app//api?username=var-rishabh&show_icons=true&theme=gotham&hide_border=true&bg_color=0d1117&title_color=00ffff&icon_color=1f6fea&text_color=fefefe)
+![Rishabh's Github Stats](https://github-readme-stats.vercel.app//api?username=var-rishabh&show_icons=true&theme=gotham&hide_border=true&bg_color=0d1117&title_color=38d252&icon_color=1f6fea&text_color=fefefe)
  
-![Activity Graph](https://activity-graph.herokuapp.com/graph?username=var-rishabh&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=00ffff&point=ffffff&color=00ffff)
+![Activity Graph](https://activity-graph.herokuapp.com/graph?username=var-rishabh&theme=github&hide_border=true&bg_color=0d1117&area_color=1f6fea&line=38d252&point=ffffff&color=fefefe)
 
-<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=dark-smoky&hide_border=true" alt="var-rishabh"/>
+<img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=var-rishabh&theme=github-dark&hide_border=true" alt="var-rishabh"/>
 
-[![Top Langs](https://github-readme-stats.vercel.app//api/top-langs/?username=var-rishabh&layout=compact&theme=gotham&langs_count=10&hide_border=true&bg_color=0d1117&text_color=ffffff&title_color=00ffff)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app//api/top-langs/?username=var-rishabh&layout=compact&theme=gotham&langs_count=10&hide_border=true&bg_color=0d1117&text_color=fefefe)](https://github.com/anuraghazra/github-readme-stats)
