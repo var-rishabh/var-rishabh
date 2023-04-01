@@ -1,6 +1,6 @@
 > <h1 align="left">Hi 👋, I'm Rishabh Varshney</h1>
 
-<img align="right" width="400px" src="https://www.pinclipart.com/picdir/big/90-907332_json-at-master-github-octocat-clipart.png">
+<img align="right" width="300px" src="https://www.pinclipart.com/picdir/big/90-907332_json-at-master-github-octocat-clipart.png">
 
 > <h3 align="left">An ardent full stack developer from India.</h3>
 
