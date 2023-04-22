@@ -14,7 +14,7 @@
 
 - ☢ My friends call me **`Radioactive`**
 
-- ⚡ Other interest : `volleyball 🏐` | `Astronomy 🔭`
+- ⚡ Other interest : `Volleyball 🏐` | `Chess ♛` |  `Astronomy 🔭`
 
 <br> 
 
@@ -30,7 +30,7 @@
 ><h3 align="left">🧑🏻‍💻 Languages and Tools:</h3>
 
 ![HTML](https://img.shields.io/badge/html5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TypeScript](https://img.shields.io/badge/typescript-007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/python-blue.svg?style=for-the-badge&logo=c&logoColor=white)
@@ -40,6 +40,9 @@
 ![Express.JS](https://img.shields.io/badge/expressjs-black.svg?style=for-the-badge&logo=expressjs&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Next JS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
 ![jquery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/mongodb-4DB33D.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 ![SQL](https://img.shields.io/badge/sql-00758F.svg?style=for-the-badge&logo=sql&logoColor=white)
@@ -47,9 +50,17 @@
 ![Git](https://img.shields.io/badge/git-f34f29.svg?style=for-the-badge&logo=git&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Adobe Photoshop](https://img.shields.io/badge/adobephotoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white)
 <br>
 
+><h3 align="left">🧑🏻‍💻 Setup:</h3>
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![VSCode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Vim](https://img.shields.io/badge/VIM-%2311AB00.svg?&style=for-the-badge&logo=vim&logoColor=white)
+![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
+<br>
 ---
  
 ![Rishabh's Github Stats](https://github-readme-stats.vercel.app//api?username=var-rishabh&show_icons=true&theme=gotham&hide_border=true&bg_color=0d1117&title_color=38d252&icon_color=1f6fea&text_color=fefefe)
