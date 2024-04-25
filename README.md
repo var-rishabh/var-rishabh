@@ -10,7 +10,7 @@
 
 - 📫 Always available at **[`right.rishabh@gmail.com`](mailto:right.rishabh@gmail.com)**
 
-- 👬 My partners: <a href="https://github.com/siddastic" style="text-decoration:none;">`Siddhant`</a> & <a href="https://github.com/nazims-flow">`Nazim`</a>
+- 👬 My partners: <a href="https://github.com/siddastic" style="text-decoration:none;">`Siddhant`</a>
 
 - ☢ My friends call me **`Radioactive`**
 
