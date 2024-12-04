@@ -6,7 +6,7 @@
 
 - 🔭 I’m currently working on <a href="https://github.com/var-rishabh/codePedia">**`CodePedia`**
 
-- 🌱 I’m currently learning NextJS.
+- 🌱 I’m currently learning Flutter.
 
 - 📫 Always available at **[`right.rishabh@gmail.com`](mailto:right.rishabh@gmail.com)**
 
@@ -18,7 +18,7 @@
 
 <br> 
 
-><h3 align="left">🌏 Get in Touch</h3>
+> <h3 align="left">🌏 Get in Touch</h3>
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rishabh-builds/)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/var_rishabh) 
 [![instagram](https://img.shields.io/badge/instagram-E1306C?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/rishabh.rbxl/)
@@ -27,19 +27,19 @@
 
 <br>
 
-><h3 align="left">🧑🏻‍💻 Languages and Tools:</h3>
+> <h3 align="left">🧑🏻‍💻 Languages and Tools:</h3>
 
-![HTML](https://img.shields.io/badge/html5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![TypeScript](https://img.shields.io/badge/typescript-007acc.svg?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/python-blue.svg?style=for-the-badge&logo=python&logoColor=white)
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![Python](https://img.shields.io/badge/python-blue.svg?style=for-the-badge&logo=python&logoColor=yellow)
+![Dart](https://img.shields.io/badge/dart-%2331A8FF.svg?style=for-the-badge&logo=dart&logoColor=white)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Node.JS](https://img.shields.io/badge/nodejs-339933.svg?style=for-the-badge&logo=node.js%2B%2B&logoColor=white)
-![Express.JS](https://img.shields.io/badge/expressjs-black.svg?style=for-the-badge&logo=express&logoColor=white)
+![Java](https://img.shields.io/badge/java-E34F26.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Flutte](https://img.shields.io/badge/flutter-blue.svg?style=for-the-badge&logo=flutter&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Next JS](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Node.JS](https://img.shields.io/badge/nodejs-339933.svg?style=for-the-badge&logo=node.js%2B%2B&logoColor=white)
+![Express.JS](https://img.shields.io/badge/expressjs-black.svg?style=for-the-badge&logo=express&logoColor=white)
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-1D63ED?style=for-the-badge&logo=docker&logoColor=E5F2FC)
 ![MongoDB](https://img.shields.io/badge/mongodb-4DB33D.svg?style=for-the-badge&logo=mongodb&logoColor=white)
@@ -48,6 +48,7 @@
 ![Git](https://img.shields.io/badge/git-f34f29.svg?style=for-the-badge&logo=git&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Adobe Photoshop](https://img.shields.io/badge/adobephotoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white)
 
