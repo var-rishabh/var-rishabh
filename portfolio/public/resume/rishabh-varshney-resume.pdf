@@ -12,37 +12,50 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
 5 0 obj
-<< /Length 1475 >>
+<< /Length 2000 >>
 stream
 BT /F1 9 Tf 12 TL
 54 760 Td
 (RISHABH VARSHNEY) Tj
-T* (Software Engineer -- AI/ML, Backend Architectures, Full-Stack Systems) Tj
-T* (Hyderabad, India | Remote  |  GitHub: github.com/var-rishabh) Tj
+T* (Systems & AI Engineer -- AI/ML, Backend Systems, Full-Stack) Tj
+T* (Hyderabad, India / Remote  |  right.rishabh@gmail.com) Tj
+T* (github.com/var-rishabh  |  linkedin.com/in/rishabh-builds) Tj
 T* () Tj
 T* (SUMMARY) Tj
-T* (Software engineer specializing in AI/ML systems, backend architecture, and) Tj
-T* (full-stack product development. Experience building high-throughput streaming) Tj
-T* (pipelines, transformer-based NLP systems, and production-grade web platforms.) Tj
+T* (Full-stack, backend and AI/ML engineer building the machinery behind products:) Tj
+T* (LLM-powered applications, NLP research, real-time streaming backends and) Tj
+T* (microservice platforms.) Tj
 T* () Tj
-T* (SELECTED PROJECTS) Tj
+T* (AI / ML) Tj
 T* () Tj
 T* (CareerForge AI) Tj
-T* (Intelligent ATS resume alignment engine paired with an interactive 3D portfolio) Tj
-T* (workspace. Built with Next.js, Three.js, Claude MCP, and Tailwind CSS.) Tj
+T* (AI career ecosystem: ATS-style resume analysis, alignment to target roles and) Tj
+T* (rewriting, with LLM tool orchestration over Claude MCP and an interactive 3D) Tj
+T* (workspace. Next.js, Claude MCP, Three.js, Tailwind CSS.) Tj
 T* () Tj
-T* (High-Throughput Streaming & Backend Pipelines) Tj
-T* (NVR streaming and microservice pipelines built with Node.js and Python,) Tj
-T* (featuring optimized socket streaming and low-latency media processing.) Tj
+T* (Text Summarization Research -- ICCIMA) Tj
+T* (Research into extractive and abstractive text summarization algorithms,) Tj
+T* (presented at ICCIMA. Python, PyTorch, Transformers, NLP.) Tj
 T* () Tj
-T* (Research & AI Summarization Engine) Tj
-T* (Transformer-based NLP pipeline for automatic text summarization; research) Tj
-T* (presented at the ICCIMA conference.) Tj
+T* (BACKEND SYSTEMS) Tj
+T* () Tj
+T* (NVR Streaming) Tj
+T* (Network video recorder streaming: concurrent camera feeds ingested and served) Tj
+T* (over tuned socket pipelines for low latency. Node.js, Python, Sockets.) Tj
+T* () Tj
+T* (Twilio Integrations) Tj
+T* (Programmable SMS and voice wired into backend workflows: event-driven) Tj
+T* (notifications and verification over webhooks. Twilio, Node.js, REST.) Tj
+T* () Tj
+T* (Washee Backend) Tj
+T* (Service layer for the Washee platform: independently deployable microservices) Tj
+T* (with clean API boundaries. Node.js, Microservices, REST APIs, Docker.) Tj
 T* () Tj
 T* (TECHNICAL SKILLS) Tj
-T* (Languages & Backend: Python, TypeScript, Node.js, C++, SQL, REST, gRPC) Tj
-T* (AI/ML & Data: PyTorch, NLP Summarization, Machine Learning Pipelines) Tj
-T* (Cloud & Infra: Docker, Git, CI/CD, Linux, Scalable System Architecture) Tj
+T* (Languages: Python, TypeScript, JavaScript, C++, Java, Dart, SQL) Tj
+T* (Backend & Web: Node.js, Express, Next.js, React, Redux, REST, WebSockets) Tj
+T* (AI/ML: PyTorch, Transformers, NLP, LLM tooling \(Claude MCP\)) Tj
+T* (Data & Infra: MongoDB, MySQL, Firebase, Docker, Git, Vercel) Tj
 T* () Tj
 T* (STATUS) Tj
 T* (Available for impactful roles. Location: Hyderabad / Remote.) Tj
@@ -60,5 +73,5 @@ xref
 trailer
 << /Size 6 /Root 1 0 R >>
 startxref
-1838
+2363
 %%EOF

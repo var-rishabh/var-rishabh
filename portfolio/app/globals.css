@@ -3,92 +3,163 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #090a0f;
-  --color-surface: #0f1117;
-  --color-foreground: #e9ecf3;
-  --color-accent: #5eead4;
-  --color-accent-2: #a78bfa;
-  --color-muted: #8a8f9c;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --color-void: #050505;
+  --color-chrome: #eceef0;
+  --color-silver: #bfc3c9;
+  --color-graphite: #7b8087;
+  --color-amber: #ff9a3c;
+  --color-titanium: #86a9d9;
+  --color-line: rgba(255, 255, 255, 0.1);
+  color-scheme: dark;
 }
 
-* {
+html {
   scroll-behavior: smooth;
 }
 
 html,
 body {
-  background-color: var(--color-background);
-  background-image: radial-gradient(
-    circle at 50% 0%,
-    rgba(94, 234, 212, 0.08),
-    transparent 45%
-  );
-  color: var(--color-foreground);
-  height: 100%;
+  background-color: var(--color-void);
+  color: var(--color-silver);
+}
+
+/* No-JS safety net: the boot curtain removes itself even if React never does. */
+.boot-curtain {
+  animation: curtain-timeout 0.6s ease 4.5s forwards;
+}
+@keyframes curtain-timeout {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 body {
   overflow-x: hidden;
-}
-
-/* Full-bleed container reserved for the R3F <Canvas>. UI overlays are
-   layered on top via absolute positioning — see components/ui. */
-.canvas-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.overlay-layer {
-  position: relative;
-  z-index: 10;
-}
-
-/* Glassmorphic surface used by the floating navbar and HUD chrome. */
-.glass-panel {
-  background: rgba(15, 17, 23, 0.55);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Reusable 8pt-grid section rhythm. */
-.section-shell {
-  max-width: 1120px;
-  margin-inline: auto;
-  padding-inline: 24px;
-}
-
-@media (min-width: 768px) {
-  .section-shell {
-    padding-inline: 32px;
-  }
+  /* Static fallback when WebGL is unavailable: a faint amber core glow. */
+  background-image: radial-gradient(ellipse 60% 45% at 62% 40%, rgba(255, 154, 60, 0.07), transparent 70%);
+  background-attachment: fixed;
 }
 
 ::selection {
-  background: rgba(94, 234, 212, 0.3);
+  background: rgba(255, 154, 60, 0.32);
+  color: #fff;
 }
 
-/* Slim custom scrollbar to keep the carbon theme consistent. */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: var(--color-background);
+  background: var(--color-void);
 }
-
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
 }
 
-.text-gradient {
-  background: linear-gradient(120deg, #f4f6fb 20%, var(--color-accent) 60%, var(--color-accent-2) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+:focus-visible {
+  outline: 1px solid var(--color-amber);
+  outline-offset: 3px;
+}
+
+@layer components {
+  /* Fixed WebGL layer: never intercepts pointer events. */
+  .canvas-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .section-shell {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 768px) {
+    .section-shell {
+      padding-inline: 48px;
+    }
+  }
+
+  /*
+   * Readability scrim: an invisible radial falloff of void behind floating
+   * copy. No edges, no box — the machine just darkens around the text.
+   */
+  .scrim {
+    position: relative;
+    isolation: isolate;
+  }
+  .scrim::before {
+    content: "";
+    position: absolute;
+    inset: -22% -26%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+      closest-side,
+      rgba(5, 5, 5, 0.9) 0%,
+      rgba(5, 5, 5, 0.78) 42%,
+      rgba(5, 5, 5, 0.42) 70%,
+      rgba(5, 5, 5, 0) 100%
+    );
+  }
+
+  /* Hairline-bordered telemetry surface (module readouts, terminal). */
+  .panel {
+    border: 1px solid var(--color-line);
+    background: linear-gradient(180deg, rgba(12, 12, 13, 0.82), rgba(7, 7, 8, 0.72));
+  }
+
+  .corner-marks {
+    position: relative;
+  }
+  .corner-marks::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    background:
+      linear-gradient(var(--color-amber), var(--color-amber)) top left / 10px 1px,
+      linear-gradient(var(--color-amber), var(--color-amber)) top left / 1px 10px,
+      linear-gradient(var(--color-amber), var(--color-amber)) bottom right / 10px 1px,
+      linear-gradient(var(--color-amber), var(--color-amber)) bottom right / 1px 10px;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Cinematic finish: edge vignette + film grain, both above the canvas. */
+.screen-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+  background: radial-gradient(ellipse 120% 90% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.film-grain {
+  position: fixed;
+  inset: -50%;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 0.9s steps(4) infinite;
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3%, 2%); }
+  50% { transform: translate(2%, -4%); }
+  75% { transform: translate(-2%, -1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .film-grain {
+    animation: none;
+  }
 }

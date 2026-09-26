@@ -1,40 +1,53 @@
 "use client";
 
+import { Component, type ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
 import type { MotionValue } from "framer-motion";
-import CameraRig from "@/components/canvas/CameraRig";
 import Scene from "@/components/canvas/Scene";
-import Loader from "@/components/ui/Loader";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { SignalProvider } from "@/components/canvas/machine/signal";
+import { useDeviceProfile } from "@/hooks/useDeviceProfile";
+
+/** No WebGL (or a lost context on init) degrades to the CSS backdrop. */
+class CanvasBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    return this.state.failed ? null : this.props.children;
+  }
+}
 
 interface SceneCanvasProps {
   scrollProgress: MotionValue<number>;
+  onReady?: () => void;
 }
 
 /**
- * Top-level R3F canvas mount. Keeps renderer/DPR/perf concerns here so
- * `Scene` can stay purely about content (geometry, lights, shaders).
- * Skips the full WebGL scene on narrow viewports in favor of the static
- * gradient background already painted by globals.css, since a full
- * particle + bloom scene isn't worth the battery/perf cost on mobile.
+ * Fixed, full-viewport WebGL layer (the wrapper is pointer-events-none).
+ * Renderer settings live here; `Scene` is purely content.
  */
-export default function SceneCanvas({ scrollProgress }: SceneCanvasProps) {
-  const isMobile = useIsMobile();
-
-  if (isMobile) return null;
+export default function SceneCanvas({ scrollProgress, onReady }: SceneCanvasProps) {
+  const profile = useDeviceProfile();
+  if (!profile) return null;
 
   return (
-    <Canvas
-      dpr={[1, 1.75]}
-      gl={{ antialias: true, powerPreference: "high-performance" }}
-      camera={{ position: [0, 0.2, 6.4], fov: 45 }}
-    >
-      <Suspense fallback={<Loader />}>
-        <CameraRig scrollProgress={scrollProgress}>
-          <Scene />
-        </CameraRig>
-      </Suspense>
-    </Canvas>
+    <CanvasBoundary>
+      <Canvas
+        dpr={profile.lite ? [1, 1.3] : [1, 1.75]}
+        gl={{ antialias: profile.lite, powerPreference: "high-performance", stencil: false }}
+        camera={{ position: [8.6, 4.9, 16.5], fov: 42, near: 0.1, far: 140 }}
+        onCreated={() => {
+          // Give the first frames (shader compilation) a moment before revealing.
+          requestAnimationFrame(() => requestAnimationFrame(() => onReady?.()));
+        }}
+      >
+        <SignalProvider scrollProgress={scrollProgress} calm={profile.calm}>
+          <Scene lite={profile.lite} />
+        </SignalProvider>
+      </Canvas>
+    </CanvasBoundary>
   );
 }
