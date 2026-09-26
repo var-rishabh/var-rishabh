@@ -3,19 +3,34 @@
 @tailwind utilities;
 
 :root {
-  --color-background: #05060a;
-  --color-foreground: #e6e9ef;
+  --color-background: #090a0f;
+  --color-surface: #0f1117;
+  --color-foreground: #e9ecf3;
   --color-accent: #5eead4;
+  --color-accent-2: #a78bfa;
   --color-muted: #8a8f9c;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   background-color: var(--color-background);
+  background-image: radial-gradient(
+    circle at 50% 0%,
+    rgba(94, 234, 212, 0.08),
+    transparent 45%
+  );
   color: var(--color-foreground);
   height: 100%;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Full-bleed container reserved for the R3F <Canvas>. UI overlays are
@@ -24,14 +39,56 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
 }
 
 .overlay-layer {
   position: relative;
   z-index: 10;
-  pointer-events: none;
 }
 
-.overlay-layer > * {
-  pointer-events: auto;
+/* Glassmorphic surface used by the floating navbar and HUD chrome. */
+.glass-panel {
+  background: rgba(15, 17, 23, 0.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Reusable 8pt-grid section rhythm. */
+.section-shell {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-inline: 32px;
+  }
+}
+
+::selection {
+  background: rgba(94, 234, 212, 0.3);
+}
+
+/* Slim custom scrollbar to keep the carbon theme consistent. */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #f4f6fb 20%, var(--color-accent) 60%, var(--color-accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
