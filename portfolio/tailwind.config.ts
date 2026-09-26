@@ -2,40 +2,42 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: "var(--color-background)",
-        surface: "var(--color-surface)",
-        foreground: "var(--color-foreground)",
-        accent: "var(--color-accent)",
-        accent2: "var(--color-accent-2)",
-        muted: "var(--color-muted)",
+        void: "var(--color-void)",
+        chrome: "var(--color-chrome)",
+        silver: "var(--color-silver)",
+        graphite: "var(--color-graphite)",
+        amber: "var(--color-amber)",
+        titanium: "var(--color-titanium)",
+        line: "var(--color-line)",
       },
       fontFamily: {
-        mono: ["var(--font-mono)", "monospace"],
-        sans: ["var(--font-sans)", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
-      spacing: {
-        "0.5u": "4px",
-        "1u": "8px",
-        "2u": "16px",
-        "3u": "24px",
-        "4u": "32px",
+      fontSize: {
+        mega: ["clamp(2.25rem, min(8.2vw, 13.5vh), 8.5rem)", { lineHeight: "0.86", letterSpacing: "-0.03em" }],
+        giga: ["clamp(2rem, min(4.6vw, 8.5vh), 4.75rem)", { lineHeight: "0.88", letterSpacing: "-0.025em" }],
+        telemetry: ["0.6875rem", { lineHeight: "1.4", letterSpacing: "0.14em" }],
       },
-      animation: {
-        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      screens: {
+        short: { raw: "(max-height: 820px)" },
       },
       keyframes: {
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        blink: {
+          "0%, 49%": { opacity: "1" },
+          "50%, 100%": { opacity: "0" },
+        },
+        "scan-down": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100%)" },
         },
       },
-      transitionTimingFunction: {
-        spring: "cubic-bezier(0.16, 1, 0.3, 1)",
+      animation: {
+        blink: "blink 1.1s steps(1) infinite",
+        "scan-down": "scan-down 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite",
       },
     },
   },
