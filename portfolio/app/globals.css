@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #05060a;
+  --color-foreground: #e6e9ef;
+  --color-accent: #5eead4;
+  --color-muted: #8a8f9c;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  height: 100%;
+}
+
+/* Full-bleed container reserved for the R3F <Canvas>. UI overlays are
+   layered on top via absolute positioning — see components/ui. */
+.canvas-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay-layer {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.overlay-layer > * {
+  pointer-events: auto;
+}
