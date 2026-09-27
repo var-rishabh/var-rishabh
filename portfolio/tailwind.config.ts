@@ -4,13 +4,16 @@ const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      // Literal hex (mirrors the CSS vars in globals.css) so opacity modifiers
+      // like `bg-void/90` or `text-silver/85` work — Tailwind can't apply
+      // alpha to a plain `var(--…)` colour and silently drops those classes.
       colors: {
-        void: "var(--color-void)",
-        chrome: "var(--color-chrome)",
-        silver: "var(--color-silver)",
-        graphite: "var(--color-graphite)",
-        amber: "var(--color-amber)",
-        titanium: "var(--color-titanium)",
+        void: "#050505",
+        chrome: "#eceef0",
+        silver: "#bfc3c9",
+        graphite: "#7b8087",
+        amber: "#ff9a3c",
+        titanium: "#86a9d9",
         line: "var(--color-line)",
       },
       fontFamily: {

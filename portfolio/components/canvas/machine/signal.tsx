@@ -14,11 +14,13 @@ import { clamp } from "@/lib/utils";
  * - progress: damped whole-page scroll (0..1) — gives the camera inertia
  * - energy:   0..1, rises with scroll velocity; spins/pulses the machine
  * - motion:   time-based animation multiplier (reduced for prefers-reduced-motion)
+ * - lite:     low-end / small-screen profile — parts skip non-essential per-frame work
  */
 export interface MachineSignal {
   progress: number;
   energy: number;
   motion: number;
+  lite: boolean;
 }
 
 const SignalContext = createContext<MutableRefObject<MachineSignal> | null>(null);
@@ -26,14 +28,16 @@ const SignalContext = createContext<MutableRefObject<MachineSignal> | null>(null
 interface SignalProviderProps {
   scrollProgress: MotionValue<number>;
   calm: boolean;
+  lite: boolean;
   children: ReactNode;
 }
 
-export function SignalProvider({ scrollProgress, calm, children }: SignalProviderProps) {
+export function SignalProvider({ scrollProgress, calm, lite, children }: SignalProviderProps) {
   const signal = useRef<MachineSignal>({
     progress: clamp(scrollProgress.get(), 0, 1),
     energy: 0,
     motion: calm ? 0.2 : 1,
+    lite,
   });
 
   // Negative priority: runs before every other useFrame subscriber, so all
@@ -41,10 +45,12 @@ export function SignalProvider({ scrollProgress, calm, children }: SignalProvide
   useFrame((_, delta) => {
     const s = signal.current;
     const dt = Math.min(delta, 0.1);
-    s.progress = MathUtils.damp(s.progress, clamp(scrollProgress.get(), 0, 1), 3.4, dt);
+    // Touch scrolling already carries momentum, so the camera tracks it more tightly there.
+    s.progress = MathUtils.damp(s.progress, clamp(scrollProgress.get(), 0, 1), lite ? 5 : 3.4, dt);
     const velocity = Math.min(Math.abs(scrollProgress.getVelocity()) * 5, 1);
     s.energy = MathUtils.damp(s.energy, velocity, velocity > s.energy ? 6 : 1.6, dt);
     s.motion = calm ? 0.2 : 1;
+    s.lite = lite;
   }, -1);
 
   return <SignalContext.Provider value={signal}>{children}</SignalContext.Provider>;

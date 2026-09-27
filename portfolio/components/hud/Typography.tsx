@@ -5,7 +5,7 @@ import { CHAPTERS } from "@/data/chapters";
 import { revealItem, revealLine } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
-/** `[02] AI/ML PROCESSING ──── CORE.MODULE` — chapter metadata rule. */
+/** `[02] EXPERIENCE ──── RUNTIME.CORE` — chapter metadata rule. */
 export function ChapterTag({ index, aside }: { index: number; aside: string }) {
   const chapter = CHAPTERS[index];
   return (

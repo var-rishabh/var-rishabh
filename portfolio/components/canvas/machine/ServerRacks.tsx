@@ -48,6 +48,7 @@ export default function ServerRacks() {
   const ledsRef = useRef<InstancedMesh>(null);
   const traysRef = useRef<InstancedMesh>(null);
   const blinkClock = useRef(0);
+  const settled = useRef(false);
 
   const layout = useMemo(() => {
     const unitBase = new Float32Array(UNIT_COUNT * 4); // x(face), y, z, side
@@ -113,11 +114,16 @@ export default function ServerRacks() {
     const leds = ledsRef.current;
     if (!units || !leds) return;
 
-    const { progress, energy, motion } = signal.current;
+    const { progress, energy, motion, lite } = signal.current;
     const t = state.clock.elapsedTime * motion;
     const { unitBase, ledOffset } = layout;
 
-    for (let i = 0; i < UNIT_COUNT; i += 1) {
+    // Lite profile: lay the drawers out once and keep only the LED blink —
+    // saves ~1.1k matrix writes + a GPU buffer upload every frame.
+    const animateDrawers = !(lite && settled.current);
+    if (animateDrawers) settled.current = true;
+
+    for (let i = 0; animateDrawers && i < UNIT_COUNT; i += 1) {
       const x = unitBase[i * 4];
       const y = unitBase[i * 4 + 1];
       const z = unitBase[i * 4 + 2];
@@ -136,8 +142,10 @@ export default function ServerRacks() {
         );
       }
     }
-    units.instanceMatrix.needsUpdate = true;
-    leds.instanceMatrix.needsUpdate = true;
+    if (animateDrawers) {
+      units.instanceMatrix.needsUpdate = true;
+      leds.instanceMatrix.needsUpdate = true;
+    }
 
     // Blink a random handful of LEDs ~12 times a second.
     blinkClock.current += delta;

@@ -3,7 +3,7 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Vector3, type Group, type InstancedMesh, type Mesh, type MeshStandardMaterial } from "three";
-import { HOLDS } from "@/lib/timeline";
+import { getHolds } from "@/lib/timeline";
 import { windowed } from "@/lib/utils";
 import { METAL, PALETTE } from "./palette";
 import { useMachineSignal } from "./signal";
@@ -43,7 +43,7 @@ function fibonacciSphere(count: number, radius: number): Vector3[] {
 }
 
 /**
- * The AI/ML module: a glowing heart wrapped in torus-knot "neural paths",
+ * The runtime core: a glowing heart wrapped in torus-knot signal paths,
  * a synapse lattice, three gimbal rings, a wireframe containment shell and
  * the circular mount that bolts it into the machine. As the camera dives
  * in (chapter 02) the rings unfold outward and the heart runs hotter.
@@ -107,7 +107,8 @@ export default function Core() {
     const { progress, energy, motion } = signal.current;
     const t = state.clock.elapsedTime * motion;
     const spin = delta * motion * (0.22 + energy * 1.8);
-    const focus = windowed(progress, HOLDS[1].start, HOLDS[1].end, 0.12);
+    const core = getHolds()[1];
+    const focus = windowed(progress, core.start, core.end, 0.12);
 
     if (heartMaterial.current) {
       heartMaterial.current.emissiveIntensity = 1.5 + Math.sin(t * 2.1) * 0.35 + focus * 0.7 + energy * 1.2;

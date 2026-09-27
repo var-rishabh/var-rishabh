@@ -1,77 +1,98 @@
 %PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 612 792] /Contents 5 0 R >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.linkedin.com/in/rishabh-builds/)
+>> /Border [ 0 0 0 ] /Rect [ 226.6462 772.3887 339.4352 782.7087 ] /Subtype /Link /Type /Annot
+>>
 endobj
 5 0 obj
-<< /Length 2000 >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/var-rishabh)
+>> /Border [ 0 0 0 ] /Rect [ 351.2344 772.3887 438.6964 782.7087 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://var-rishabh.github.io)
+>> /Border [ 0 0 0 ] /Rect [ 450.4956 772.3887 528.403 782.7087 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R ] /Contents 11 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 10 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/PageMode /UseNone /Pages 10 0 R /Type /Catalog
+>>
+endobj
+9 0 obj
+<<
+/Author (Rishabh Varshney) /CreationDate (D:20260927145212+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260927145212+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Software Engineer resume) /Title (Rishabh Varshney \204 Resume) /Trapped /False
+>>
+endobj
+10 0 obj
+<<
+/Count 1 /Kids [ 7 0 R ] /Type /Pages
+>>
+endobj
+11 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 4085
+>>
 stream
-BT /F1 9 Tf 12 TL
-54 760 Td
-(RISHABH VARSHNEY) Tj
-T* (Systems & AI Engineer -- AI/ML, Backend Systems, Full-Stack) Tj
-T* (Hyderabad, India / Remote  |  right.rishabh@gmail.com) Tj
-T* (github.com/var-rishabh  |  linkedin.com/in/rishabh-builds) Tj
-T* () Tj
-T* (SUMMARY) Tj
-T* (Full-stack, backend and AI/ML engineer building the machinery behind products:) Tj
-T* (LLM-powered applications, NLP research, real-time streaming backends and) Tj
-T* (microservice platforms.) Tj
-T* () Tj
-T* (AI / ML) Tj
-T* () Tj
-T* (CareerForge AI) Tj
-T* (AI career ecosystem: ATS-style resume analysis, alignment to target roles and) Tj
-T* (rewriting, with LLM tool orchestration over Claude MCP and an interactive 3D) Tj
-T* (workspace. Next.js, Claude MCP, Three.js, Tailwind CSS.) Tj
-T* () Tj
-T* (Text Summarization Research -- ICCIMA) Tj
-T* (Research into extractive and abstractive text summarization algorithms,) Tj
-T* (presented at ICCIMA. Python, PyTorch, Transformers, NLP.) Tj
-T* () Tj
-T* (BACKEND SYSTEMS) Tj
-T* () Tj
-T* (NVR Streaming) Tj
-T* (Network video recorder streaming: concurrent camera feeds ingested and served) Tj
-T* (over tuned socket pipelines for low latency. Node.js, Python, Sockets.) Tj
-T* () Tj
-T* (Twilio Integrations) Tj
-T* (Programmable SMS and voice wired into backend workflows: event-driven) Tj
-T* (notifications and verification over webhooks. Twilio, Node.js, REST.) Tj
-T* () Tj
-T* (Washee Backend) Tj
-T* (Service layer for the Washee platform: independently deployable microservices) Tj
-T* (with clean API boundaries. Node.js, Microservices, REST APIs, Docker.) Tj
-T* () Tj
-T* (TECHNICAL SKILLS) Tj
-T* (Languages: Python, TypeScript, JavaScript, C++, Java, Dart, SQL) Tj
-T* (Backend & Web: Node.js, Express, Next.js, React, Redux, REST, WebSockets) Tj
-T* (AI/ML: PyTorch, Transformers, NLP, LLM tooling \(Claude MCP\)) Tj
-T* (Data & Infra: MongoDB, MySQL, Firebase, Docker, Git, Vercel) Tj
-T* () Tj
-T* (STATUS) Tj
-T* (Available for impactful roles. Location: Hyderabad / Remote.) Tj
-ET
-endstream
+Gb!#^>Bedl&q801W0cRieju)<f6LPYEC.[S(n@!W-SLJ/#/rpRZm6=Im#U&-=qV+]N1#XFCHF6e[CWs8o$pglEll/$C]=0OU>msKS\!n5Bm`Qk_f!irN!A<$^V=cHOc?6ol85%9[6&NCm<%'l&!q.2KqC7dI+?\)R+#?!_1ZlcW0>tE&bS0m34KH^R@)4^Zd?fFQE-Wkr0>;%@`b83qj@#a>EQWGU2CnnY00c8DE;s!A_E[Nq<h6Yks1$Q=_d8M)?6;R72X^lJjR[R%fVs4&A?D32Uu8CUL>-qik+OPCD=d41'hB]i[BbHMKu<q(.LTq4nc^odkI>('6E3IcrP/LTAEH`B,A%4C(Cc^g1q-]5+p=%!<^s*#'Pq9jTZd^S=fPYs0KbG)BISg#]7s%@m9IQr872E2mKo+://d8]2#\h%hXeE:"\_lG3c?DC")M4)d0e6lgS!.bGeN^.c\=U<IU7TJ4Af^>m`/t&5U2G8khsGJ\4?R8N8OQZZ*/Tj!idmXdKmt/%Uuic*U1.<bXUt+4Ec:&M:?s1-\J]N9R+I(F*:BMj1pq$q@A:00duZm2_-e$^kA'd>.8f=d)5n:k(=mCcXI<7TsD\Qpd+q8IH9V32J$nBV@dajjB0Mn!!6I6<l#5Xmg>L/GrZY5IJ6Q27en,pl2iC=pEZhbo5(e`q!7I(3Dj^[EZ3\-7Pc`7D.Y6#G8n5f'$0q=U>&17`Ss^UDif\8,X*;akX`'&QH9&Xp:_ANS\HUR!h"O[uHW%-W;f2T4U^OXd>,?I38$[-^YfqR&oL<"VM3OBrjan6tX`6iR,ng'Z_Pi`q`Z$TpE0D@`bWF<N5ai`DBVYbo!iZ_g.V?<b37Ac+@+D9hN`#lsi`#=beXSBg;">X`jXJ>k.?7)@uZd/r'>])3'(_St1l7Om^rKZUS!%>m]$d&F:8?/jb:o?\7dm?.6WXLo6Z.b2d3ARnE#f4;nb&>o_?f&Cfo3BRFs18nTW.4"5Q,GdrNd]Vb'Z^*D79lT_VM&h>$Vd<AGg.mf37a?Id$O6@LAAg6GG+EE]=P8'-VUT^:FWE1r<NNs7lb;ZSVq.@\iMr=&j_8#]oZP!D6'!7>83nA&&5Vb\q)G\-t9JQ4bOKL(iIVGP8&&C!+LE>bh%aXAW#1ViWNI`[BW:Fqe.D[OL\Zb#IE11LIKc7o<jRA:jA/o3&\5Y+SeJrN?nBP/FigjBAI@-Hf+0l4G$q)?EHL7C13)0!)eUSZLbm!=EUYaPjYu',-Th2@S:qZZb\qEjf#!+KSM!9Wt%.@h<Vi#'3@:I7G7g#U'oGS1Q/Wd@QoDV]7.9=bL+;3?)j=A#5Z)M-d/!Zo//P!JPo2YdaE;AQ3j+7.BOiXH0f^(S@k?63*+/t4TpdEtG/flfSn(//h>JC[*oQ'Q9LJof/,-j.77,]`SQrsj%+OX8U8nr\=WkCV^.6-@Z6U/VRK!1tB"&H2d/C&[1a.9FnkY3E(/@@.+4nR.e+tGdNai>M1O(j0i#M<HhJVdlH#j^/-#&Cf8"oc453r&)WE'51GoEY97FXh+c))?!VX&gWibiO6*VDtWXF/q.Xs$*sbY*m\^CU'@e9DVPi[l:r8r[K/#QnsY*F55_L`HY*VL7[!Cf.IlHZh/RnNuh`c.-eC'::#L;j+%-];lVqP"u!>P=+CH\gQsrZq-aH8-70obC:&#Lf(KgD<I`_:"j#O$hdu^M1rl56q\Q`t2J[m)r=%b)$[Pp1SB(sB?R'-=9b#Jd;+1BKF#'!e(pWD^*Dul,Yp/ZHAdCYT(e"Y3J\s:G]ostlH?52+LoUWMM#f2jCmYLS'fZ4J`%ZQ[^=MMac6<?ha&l>niI'/eN<Rroo*Idh)1bX15dXd4l49?)RCEc-VD/?u-:rJT9JoZq99LhZ;YFMPND=+fGMlJgDT!85m,Ku7#rO!,LX[(ta6Hs^L>.Cgb`rr$9jUFU<Rbt."qbY"Qr.YJ"nFQ.`b2_f&e-Z-!F1(cMnH:;X2.B!R#R%eEKMe+!-uQh"6F6;)lHTXfB"!U>0EbjGJ*^*o6)4n[9C1_bc<E;1NX^BXV`CDr@hVDSP'Q!TZPVSPm%7>Yk,_P/a"_#KJ<a[`\;.,(57!G-+KG?ek-krF3PX#.th1J,(5r2b6'NUjM1ki_gE%K!!+h;I%Jr&\%r2^$L:B$q4&5PeQ?"T6QbG_B3<e[EN(!NSWd;'QEc!0Tr&>X$M_7s!$nB`1Q,)7AV=f`)Un*hL0Fu[V=U'uMG5O-dA+gB1Do/tDQ`k4UbNC$[@<_!OiC.IZ(!RN8SZo=[@F:>D/j@gcDS!M_fL!$kH?(mcGEcf:BgSLVB@T2MW#^^3.Jlr)d3WW1c\<75dECK<Ea#JKTsj_%+S_D]c4>b!f^G$YH)Jk(rf'GWJ(eo<Vg+#KlFsN"@V2UbSgN"W#@?($bGbcH?=.MAH32Q.Nr,?U1f9X14?@;iuHM9W7"OW*sH,]8$I6op<KDC!=sPaK2i(<1tXMU[1ph7!g*ft]AtFZRg5ghCcYd2.3!r"\"&"(+C?LqaHMSKe/[%1!LlosYB7Q"6f*B]^au.uLQiqQqqRXU4:@h`2o%@!&SmT(Uur`:@ZC$`c*Jf-/]KX[?u;EOi(XTD('`A-lV(=_"6/mm^gUi*XnfD13mIH^*.P63DlYb<)(?<b\T<HKZ8aG9gKSJ?AL$YRi(gspi"nl#9@M`_NYtK>(+UX:D?Lnh4O!llUD3UY@,m/s,3m<Gf5jP\/7?iL61GTUJkt5A#e*;g%>8'2g"!'H'gOa7_Kcufel*M21.)Hq8'(]!DKSUNK/4+eLMM',`("4+)0U*2`5q`u;Ca1*S_l,C3ZhU6O@ZqTR!5S]e1[!E?<W`+`7m0LY*$f[?p%"%UZM^g-OTHi0GT-F3O$[1M$92fNs0RZh*u.i=!2aYV]%)c?Zr"C(C\aZg>04`mK"@Qmu/1@,;TeZ3+pHo1Q+[9qRM'6>$68J=9eq;UaCgiBps4Q/Mht)Q-HFR#!q8%6slOZQ?gs)8u-A2?9T0h9F(j199NOhI]<K`@Le9Ca%2Pu@\9tCMotkX55(sW)de)uO)fAkq/Ob'mr:PM\QuiHS6ZiTE@V^:0])depe:XSd)IgFB%L>flD_b6K?n0E]jGual(>asf59/HbA.p(HQrE*Utrca1t't0h-CHOFi8E"Fc1#12Y_+aV4H2UdKDSdfH\"a)NJ%[V?u!h?6',OCKnbthC.%ka8%H!hI<J8DWSE^Bs;EHUIJ\7B>m2=X7dMEnq0r\n91KhOXV,HbVRdAnN8QUa@geD\jsurS*a:J,ra)OD2:"&`+ru],qe@K@nou0.Psj1cj.a:k1nMn(_Y!n)]%N^;`8:cC`bL'Sk,in[G;6ah#M/kEpRVX2?FL9NbKPT]j;c/Qo@]imgcUEPQXR8oH)$LfYhR>l9&3-6Su6srB,Sk_Z>a22U+ZkfYb`4er:%F?PF7(L02Ol5/[nbRKSfL9iCNp-MUS-^3q]%56\l9F'Lp"=\<[GZB)/tEo%0OMc9+0hq&b<dIVdOjo(mR&rfT]fGk\DVo7m70QY,(ieaGj[E?EbFtpE<a6*6IM8KMCEaGrE>E8*XSU.b2j!>`<1M4l*MV4GtK]/hT[<DF*l<f`=2MU:qkX0s9mRm]*2]Y1WK@\.UV&?H(%IhhXs-bigDlI9f/>drcg8=JgA-a_628'6L^b2f?PYkgW>iP;=1/,2RA3cOt)YNBSF"iFG#bmb(Hkh48X.fc7MBsW_j4L_N=NM3$ceOWd5fg5S.k5658YjSDH(.>nd[HQs#Figt\[C\ARY64</;u3=DEE[T8A@ssFdlUrp[9,.T%rsbj5K+=5%:Qqru!f*lZF]krcK(VIXC0dS-<C$R;;bal0L$j8V@H,`(Us[Y1O/1*o#KFi9,af@?2SFU[tfF5NSHepK'NOWYQU`KeEe/D:eLHh0RcM.!cn/hYHr6`S7W.4aIW@FkcdX^u4X%@XjA2Ih2"F5'JI"g!7oc!YD/)GlV7o9SoW=,AQ?HM9F"BPebkHjq'iN>\V.fd*BlJ`HP*QRW&"!U^SZ-OssrSalZ`[bD"GkHXa?S;TSud_*,7e!]h.sN(M!V'Ul#A_m#mprr^O9eis~>endstream
 endobj
 xref
-0 6
+0 12
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000311 00000 n 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000698 00000 n 
+0000000878 00000 n 
+0000001113 00000 n 
+0000001182 00000 n 
+0000001489 00000 n 
+0000001549 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<<
+/ID 
+[<a864b783a1e39723f9eff0f6228a3382><a864b783a1e39723f9eff0f6228a3382>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 9 0 R
+/Root 8 0 R
+/Size 12
+>>
 startxref
-2363
+5726
 %%EOF

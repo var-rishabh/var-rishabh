@@ -1,10 +1,12 @@
 /**
- * Chapter layout + copy for the Machine Room. `screens` is the scroll
- * length of each chapter in viewport heights: one screen of it is the
- * pinned panel itself, the rest is the 100vh spacer the camera travels
- * through. The 3D camera timeline and the HUD both derive their stops
- * from this list (see lib/timeline.ts), so re-ordering or lengthening a
- * chapter here keeps the whole experience in sync.
+ * Chapter layout + copy for the Machine Room. `screens` is the desktop
+ * scroll length of each chapter in viewport heights: one screen is the
+ * pinned panel itself, the rest is the spacer the camera travels through
+ * (phones use a much shorter spacer — see components/hud/Chapter.tsx).
+ * The camera timeline and HUD are measured from the rendered layout, so
+ * re-ordering or lengthening a chapter here keeps everything in sync.
+ *
+ * All copy below comes from the resume (master_profile).
  */
 export interface ChapterMeta {
   id: string;
@@ -16,63 +18,90 @@ export interface ChapterMeta {
 
 export const CHAPTERS: ChapterMeta[] = [
   { id: "initialization", code: "01", label: "Initialization", shortLabel: "INIT", screens: 2 },
-  { id: "processing", code: "02", label: "AI/ML Processing", shortLabel: "CORE", screens: 2 },
-  { id: "throughput", code: "03", label: "Throughput & Backend", shortLabel: "CHANNELS", screens: 2 },
-  { id: "output", code: "04", label: "Output", shortLabel: "OUTPUT", screens: 2 },
+  { id: "experience", code: "02", label: "Experience", shortLabel: "EXPERIENCE", screens: 2 },
+  { id: "projects", code: "03", label: "Projects & Stack", shortLabel: "PROJECTS", screens: 2 },
+  { id: "output", code: "04", label: "Output", shortLabel: "CONTACT", screens: 2 },
 ];
 
 export interface SystemModule {
   code: string;
   title: string;
+  /** Role line under the title (experience entries). */
+  role?: string;
   kind: string;
   summary: string;
   stack: string[];
 }
 
-export const AI_MODULES: SystemModule[] = [
+export const PROFILE = {
+  name: "Rishabh Varshney",
+  title: "Software Engineer",
+  focus: "Frontend & Full-Stack",
+  location: "Gurugram, India",
+  coordinates: "GGN 28.46°N 77.03°E",
+} as const;
+
+/** Headline figures shown in chapter 01 — straight from the resume bullets. */
+export const HEADLINE_METRICS = [
+  { value: "3+", label: "Years shipping" },
+  { value: "10k+", label: "Daily active agents" },
+  { value: "15+", label: "Features to prod" },
+] as const;
+
+export const EXPERIENCE: SystemModule[] = [
   {
-    code: "MOD-02.A",
-    title: "CareerForge AI",
-    kind: "AI ECOSYSTEM // FULL-STACK",
+    code: "EXP-01",
+    title: "RUNO",
+    role: "Software Development Engineer I",
+    kind: "AUG 2024 — PRESENT",
     summary:
-      "Reads resumes the way an ATS does, aligns them to target roles and rewrites them — LLM tool orchestration over Claude MCP inside an interactive 3D workspace.",
-    stack: ["Next.js", "Claude MCP", "LLMs", "Three.js", "Tailwind"],
+      "Own key UI modules of a B2B call CRM used by 10k+ daily agents — shared component library, 15+ features shipped, incident MTTR down 60%.",
+    stack: ["Component Library", "REST Contracts", "Observability", "On-call"],
   },
   {
-    code: "MOD-02.B",
-    title: "Text Summarization — ICCIMA",
-    kind: "RESEARCH // NLP",
+    code: "EXP-02",
+    title: "R3Factory",
+    role: "Software Developer Intern",
+    kind: "FEB 2024 — AUG 2024",
     summary:
-      "Research into text summarization algorithms — extractive and abstractive approaches to condensing long-form documents, presented at ICCIMA.",
-    stack: ["Python", "PyTorch", "Transformers", "NLP"],
+      "React storefront on a RASA NLP service (+30% engagement); parallel ingestion worker pool (+30% throughput, 10k+ records/wk).",
+    stack: ["React.js", "RASA NLP", "Worker Pools", "HTML5 / CSS3"],
+  },
+  {
+    code: "EXP-03",
+    title: "Otomator Technologies",
+    role: "Full Stack Developer",
+    kind: "AUG 2021 — OCT 2023",
+    summary:
+      "MERN HR platform saving 70+ hrs/month for 1,200+ employees; Node.js IoT service layer at 99.9% availability across 50+ connected devices.",
+    stack: ["MongoDB", "Express", "React", "Node.js", "Webhooks"],
   },
 ];
 
-export const BACKEND_MODULES: SystemModule[] = [
+export const PROJECTS: SystemModule[] = [
   {
-    code: "MOD-03.A",
-    title: "NVR Streaming",
-    kind: "STREAMING // REALTIME",
+    code: "PRJ-01",
+    title: "XEV Charging",
+    kind: "EV CHARGING // U.S. CLIENT",
     summary:
-      "Network video recorder streaming — concurrent camera feeds ingested and served over tuned socket pipelines, built for low latency.",
-    stack: ["Node.js", "Python", "Sockets", "Video Streams"],
+      "Led 5 engineers shipping a production EV-charging platform — live status for 100+ charge points at 2–10ms via WebSockets and Go services.",
+    stack: ["Next.js", "TypeScript", "Flutter", "Go", "AWS"],
   },
   {
-    code: "MOD-03.B",
-    title: "Twilio Integrations",
-    kind: "COMMUNICATIONS // EVENTS",
+    code: "PRJ-02",
+    title: "Finaccru",
+    kind: "ACCOUNTING // FINTECH",
     summary:
-      "Programmable SMS and voice wired into backend workflows — event-driven notifications and verification over webhooks.",
-    stack: ["Twilio", "Node.js", "Webhooks", "REST"],
+      "React review UI over OCR extraction — 500+ docs/day at 90% field accuracy, 70% less data entry — plus WebSocket chat for 100+ users.",
+    stack: ["React.js", "Redux", "FastAPI", "MySQL"],
   },
-  {
-    code: "MOD-03.C",
-    title: "Washee Backend",
-    kind: "MICROSERVICES // PLATFORM",
-    summary:
-      "The service layer behind the Washee platform — independently deployable microservices with clean API boundaries.",
-    stack: ["Node.js", "Microservices", "REST APIs", "Docker"],
-  },
+];
+
+export const STACK: Array<{ group: string; items: string[] }> = [
+  { group: "Frontend", items: ["React", "Next.js", "Redux", "TypeScript", "Tailwind", "Flutter"] },
+  { group: "Backend", items: ["Node.js", "Express", "FastAPI", "Go", "PostgreSQL", "MongoDB"] },
+  { group: "APIs", items: ["REST", "GraphQL", "WebSockets", "Webhooks"] },
+  { group: "Build & Cloud", items: ["Vite", "Webpack", "GitHub Actions", "AWS", "Azure", "Docker"] },
 ];
 
 export const CONTACT = {

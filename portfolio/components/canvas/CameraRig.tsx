@@ -3,7 +3,7 @@
 import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { CatmullRomCurve3, MathUtils, PerspectiveCamera, Vector3 } from "three";
-import { HOLDS } from "@/lib/timeline";
+import { getHolds, type HoldRange } from "@/lib/timeline";
 import { clamp, smoothstep } from "@/lib/utils";
 import { usePointerParallax } from "@/hooks/usePointerParallax";
 import { useMachineSignal } from "@/components/canvas/machine/signal";
@@ -26,8 +26,8 @@ interface Shot {
  * corridor, never through solid geometry. Target x-offsets push the
  * subject to the side opposite the chapter copy.
  */
-function buildShots(): Shot[] {
-  const [init, core, channels, output] = HOLDS;
+function buildShots(holds: HoldRange[]): Shot[] {
+  const [init, core, channels, output] = holds;
   const between = (a: number, b: number) => (a + b) / 2;
 
   return [
@@ -69,20 +69,23 @@ function fovForAspect(aspect: number): number {
  * Drives the camera along the flight plan from the damped scroll signal,
  * with a small pointer-parallax sway layered on top. Framing offsets
  * collapse towards centre on portrait screens where copy is full-width.
+ *
+ * The spline itself never changes; only the scroll stops (`at`) are
+ * rebuilt when the measured chapter layout changes (e.g. on phones).
  */
 export default function CameraRig() {
   const signal = useMachineSignal();
   const pointer = usePointerParallax();
 
-  const { shots, positions, targets } = useMemo(() => {
-    const plan = buildShots();
+  const { positions, targets } = useMemo(() => {
+    const plan = buildShots(getHolds());
     return {
-      shots: plan,
       positions: new CatmullRomCurve3(plan.map((s) => new Vector3(...s.position)), false, "centripetal"),
       targets: new CatmullRomCurve3(plan.map((s) => new Vector3(...s.target)), false, "centripetal"),
     };
   }, []);
 
+  const plan = useRef<{ holds: HoldRange[]; shots: Shot[] } | null>(null);
   const sway = useRef(new Vector3());
   const position = useMemo(() => new Vector3(), []);
   const target = useMemo(() => new Vector3(), []);
@@ -99,7 +102,10 @@ export default function CameraRig() {
       }
     }
 
-    const u = curveParameter(shots, signal.current.progress);
+    const holds = getHolds();
+    if (plan.current?.holds !== holds) plan.current = { holds, shots: buildShots(holds) };
+
+    const u = curveParameter(plan.current.shots, signal.current.progress);
     positions.getPoint(u, position);
     targets.getPoint(u, target);
 

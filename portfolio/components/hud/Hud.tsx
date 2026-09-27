@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, useMotionValueEvent, useSpring, useTransform, type MotionValue } from "framer-motion";
-import { CHAPTERS } from "@/data/chapters";
-import { chapterIndexAt, HOLDS } from "@/lib/timeline";
+import { CHAPTERS, PROFILE } from "@/data/chapters";
+import { chapterIndexAt } from "@/lib/timeline";
+import { useHolds } from "@/hooks/useTimeline";
 import { SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +19,7 @@ const MACHINE_DEPTH_M = 52.4;
  * HUD except when the active chapter actually changes.
  */
 export default function Hud({ scrollProgress }: { scrollProgress: MotionValue<number> }) {
+  const holds = useHolds();
   const [active, setActive] = useState(0);
   useMotionValueEvent(scrollProgress, "change", (value) => setActive(chapterIndexAt(value)));
 
@@ -26,7 +28,7 @@ export default function Hud({ scrollProgress }: { scrollProgress: MotionValue<nu
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-30 bg-gradient-to-b from-void/90 via-void/50 to-transparent">
+      <header className="fixed inset-x-0 top-0 z-30 bg-void/90 md:bg-transparent md:bg-gradient-to-b md:from-void/90 md:via-void/50 md:to-transparent">
         <div className="section-shell flex items-center justify-between py-4 sm:py-5">
           <a href={`#${CHAPTERS[0].id}`} className="group flex items-center gap-3 text-telemetry uppercase">
             <span className="grid h-8 w-8 place-items-center border border-line bg-void/60 font-display text-[13px] font-bold tracking-normal text-chrome transition-colors group-hover:border-amber/60">
@@ -69,7 +71,7 @@ export default function Hud({ scrollProgress }: { scrollProgress: MotionValue<nu
       <div aria-hidden className="fixed right-5 top-1/2 z-30 hidden h-[36vh] -translate-y-1/2 md:block lg:right-8">
         <div className="relative h-full w-px bg-line">
           <motion.div className="absolute inset-0 origin-top bg-amber" style={{ scaleY: rail }} />
-          {HOLDS.map((hold, i) => (
+          {holds.map((hold, i) => (
             <span
               key={CHAPTERS[i].id}
               className={cn(
@@ -94,7 +96,7 @@ export default function Hud({ scrollProgress }: { scrollProgress: MotionValue<nu
             <span className="hidden md:inline">{CHAPTERS[active].label}</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="hidden md:inline">HYD 17.38°N 78.48°E</span>
+            <span className="hidden md:inline">{PROFILE.coordinates}</span>
             <span className="text-amber">● Online</span>
           </div>
         </div>
