@@ -5,9 +5,9 @@ import type { SystemModule } from "@/data/chapters";
 import { revealItem, SPRING } from "@/lib/motion";
 
 /**
- * A project rendered as a module readout inside the machine — code,
- * classification, title, one-paragraph summary and its stack as
- * telemetry. Summaries clamp on short viewports so a pinned chapter
+ * A role or project rendered as a module readout inside the machine —
+ * code, period / classification, title (+ role), a metric-led summary and
+ * its stack as telemetry. Summaries clamp on short viewports so a pinned chapter
  * never overflows its screen.
  */
 export default function ModuleReadout({ module }: { module: SystemModule }) {
@@ -25,6 +25,7 @@ export default function ModuleReadout({ module }: { module: SystemModule }) {
       <h3 className="mt-1.5 font-display text-lg font-bold leading-tight text-chrome sm:text-xl">
         {module.title}
       </h3>
+      {module.role && <p className="mt-0.5 text-telemetry uppercase text-silver/90">{module.role}</p>}
       <p className="mt-2 text-[12.5px] leading-relaxed text-silver/85 short:line-clamp-2">{module.summary}</p>
       <ul className="mt-3 flex flex-wrap gap-x-2 gap-y-1 text-telemetry uppercase text-titanium">
         {module.stack.map((tech, i) => (

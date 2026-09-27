@@ -11,13 +11,13 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Rishabh Varshney — Systems & AI Engineer",
+  title: "Rishabh Varshney — Software Engineer · Frontend & Full-Stack",
   description:
-    "The Machine Room: a procedurally generated WebGL portfolio. Explore Rishabh Varshney's AI/ML systems, backend infrastructure and full-stack work by descending through a working machine.",
+    "The Machine Room: a procedurally generated WebGL portfolio. Descend through a working machine to explore Rishabh Varshney's production experience, real-time projects and stack.",
   authors: [{ name: "Rishabh Varshney", url: "https://github.com/var-rishabh" }],
   openGraph: {
-    title: "Rishabh Varshney — Systems & AI Engineer",
-    description: "Descend through the Machine Room: AI/ML, backend systems and full-stack engineering.",
+    title: "Rishabh Varshney — Software Engineer · Frontend & Full-Stack",
+    description: "Descend through the Machine Room: production UI, real-time systems and full-stack engineering.",
     type: "website",
   },
 };

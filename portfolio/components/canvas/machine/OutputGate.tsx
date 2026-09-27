@@ -12,7 +12,7 @@ import {
   type MeshBasicMaterial,
   type PointLight,
 } from "three";
-import { HOLDS } from "@/lib/timeline";
+import { getHolds } from "@/lib/timeline";
 import { smoothstep } from "@/lib/utils";
 import { METAL, PALETTE } from "./palette";
 import { useMachineSignal } from "./signal";
@@ -72,7 +72,8 @@ export default function OutputGate() {
   useFrame((state, delta) => {
     const { progress, energy, motion } = signal.current;
     const t = state.clock.elapsedTime * motion;
-    const ready = smoothstep(HOLDS[3].start - 0.12, HOLDS[3].start + 0.02, progress);
+    const output = getHolds()[3];
+    const ready = smoothstep(output.start - 0.12, output.start + 0.02, progress);
 
     if (crown.current) {
       crown.current.rotation.z += delta * motion * (0.05 + ready * 0.25 + energy * 0.4);

@@ -36,9 +36,6 @@ body {
 
 body {
   overflow-x: hidden;
-  /* Static fallback when WebGL is unavailable: a faint amber core glow. */
-  background-image: radial-gradient(ellipse 60% 45% at 62% 40%, rgba(255, 154, 60, 0.07), transparent 70%);
-  background-attachment: fixed;
 }
 
 ::selection {
@@ -62,12 +59,23 @@ body {
 }
 
 @layer components {
-  /* Fixed WebGL layer: never intercepts pointer events. */
+  /*
+   * Fixed WebGL layer: never intercepts pointer events. Sized to the large
+   * viewport (lvh) so the mobile URL bar collapsing mid-scroll doesn't
+   * resize — and reallocate — the canvas. The gradient is the static
+   * fallback when WebGL is unavailable (on a fixed layer, so it never
+   * repaints on scroll, unlike background-attachment: fixed).
+   */
   .canvas-layer {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100lvh;
     z-index: 0;
     pointer-events: none;
+    background-image: radial-gradient(ellipse 60% 45% at 62% 40%, rgba(255, 154, 60, 0.07), transparent 70%);
   }
 
   .section-shell {
@@ -153,6 +161,13 @@ body {
   50% { transform: translate(2%, -4%); }
   75% { transform: translate(-2%, -1%); }
   100% { transform: translate(0, 0); }
+}
+
+/* Phones / low-power: skip the grain layer (a 4×-viewport animated layer). */
+@media (max-width: 768px), (pointer: coarse) {
+  .film-grain {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
