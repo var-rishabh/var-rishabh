@@ -12,7 +12,7 @@ const BOOT_LOG: Array<[status: string, unit: string, state: string]> = [
   ["OK", "component.library", "loaded"],
   ["OK", "realtime.channels", "online"],
   ["OK", "ci.pipeline", "green"],
-  ["..", "operator", "awaiting input"],
+  ["OK", "operator", "connected"],
 ];
 
 function BootLog() {
@@ -81,7 +81,7 @@ export default function Initialization({ ready }: { ready: boolean }) {
           <motion.div variants={revealItem} className="mt-7 flex flex-wrap items-center gap-3">
             <HudButton href={`#${CHAPTERS[1].id}`}>Descend ↓</HudButton>
             <HudButton href={CONTACT.resume} download variant="ghost">
-              ATS Resume ↓
+              Resume ↓
             </HudButton>
           </motion.div>
           <motion.p variants={revealItem} className="mt-5 text-telemetry uppercase text-graphite">

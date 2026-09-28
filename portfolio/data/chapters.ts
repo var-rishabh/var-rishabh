@@ -55,8 +55,8 @@ export const EXPERIENCE: SystemModule[] = [
     role: "Software Development Engineer I",
     kind: "AUG 2024 — PRESENT",
     summary:
-      "Own key UI modules of a B2B call CRM used by 10k+ daily agents — shared component library, 15+ features shipped, incident MTTR down 60%.",
-    stack: ["Component Library", "REST Contracts", "Observability", "On-call"],
+      "Own key UI modules of a B2B call CRM used by 10k+ daily agents — shared component library, 15+ features shipped, 60% faster issue resolution.",
+    stack: ["Component Library", "REST Contracts", "Observability", "Monitoring"],
   },
   {
     code: "EXP-02",
@@ -92,7 +92,7 @@ export const PROJECTS: SystemModule[] = [
     title: "Finaccru",
     kind: "ACCOUNTING // FINTECH",
     summary:
-      "React review UI over OCR extraction — 500+ docs/day at 90% field accuracy, 70% less data entry — plus WebSocket chat for 100+ users.",
+      "React review UI over OCR extraction — 500+ docs/day at 90% field accuracy, 70% faster invoice entry — plus WebSocket chat for 100+ users.",
     stack: ["React.js", "Redux", "FastAPI", "MySQL"],
   },
 ];
