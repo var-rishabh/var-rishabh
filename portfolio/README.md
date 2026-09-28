@@ -60,5 +60,5 @@ newer npm blocks dependency install scripts unless listed, and that one is only 
 native-binding check (the binding itself ships as an optional dependency), so it is
 denied rather than run.
 
-The ATS resume served by the output console lives at
+The resume served by the output console lives at
 `public/resume/rishabh-varshney-resume.pdf`.

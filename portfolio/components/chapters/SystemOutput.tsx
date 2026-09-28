@@ -22,7 +22,7 @@ interface ConsoleCommand {
 const COMMANDS: ConsoleCommand[] = [
   {
     id: "resume",
-    command: "./export --resume --format=ats",
+    command: "./open --resume",
     output: "rishabh-varshney-resume.pdf",
     href: CONTACT.resume,
     download: true,
@@ -154,8 +154,8 @@ export default function SystemOutput() {
         <Headline id="output-title" lines={["System", "Ready."]} className="mt-4" />
         <OutputConsole />
         <motion.p variants={revealItem} className="mt-5 text-telemetry uppercase text-graphite">
-          © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Rishabh Varshney {"//"} Procedural
-          R3F — zero external 3D assets
+          © <span suppressHydrationWarning>{new Date().getFullYear()}</span> Rishabh Varshney {"//"} Built with
+          Next.js &amp; React Three Fiber — 100% procedural 3D
         </motion.p>
       </div>
     </Chapter>
