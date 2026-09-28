@@ -4,8 +4,9 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Color, Matrix4, type InstancedMesh } from "three";
 import { METAL, PALETTE } from "./palette";
-import { useMachineSignal } from "./signal";
+import { useMachineSignal, useToneMapped } from "./signal";
 import { useStaticInstances } from "./instancing";
+import { seededRandom } from "@/lib/utils";
 
 export const RACK_LAYOUT = {
   perSide: 26,
@@ -43,6 +44,7 @@ function cabinetPlacement(index: number) {
  */
 export default function ServerRacks() {
   const signal = useMachineSignal();
+  const toneMapped = useToneMapped();
   const cabinetsRef = useRef<InstancedMesh>(null);
   const unitsRef = useRef<InstancedMesh>(null);
   const ledsRef = useRef<InstancedMesh>(null);
@@ -54,6 +56,7 @@ export default function ServerRacks() {
     const unitBase = new Float32Array(UNIT_COUNT * 4); // x(face), y, z, side
     const ledOffset = new Float32Array(LED_COUNT * 2); // dy, dz relative to unit
     const ledBase: Color[] = [];
+    const random = seededRandom(11);
     const palette = [
       new Color(PALETTE.blue).multiplyScalar(3.2),
       new Color(PALETTE.amber).multiplyScalar(3.4),
@@ -72,7 +75,7 @@ export default function ServerRacks() {
           const li = i * LEDS_PER_UNIT + l;
           ledOffset[li * 2] = 0.07;
           ledOffset[li * 2 + 1] = RACK_LAYOUT.depth * (0.36 - l * 0.09) * side;
-          const roll = Math.random();
+          const roll = random();
           ledBase.push(palette[roll < 0.5 ? 0 : roll < 0.72 ? 1 : 2]);
         }
       }
@@ -176,7 +179,7 @@ export default function ServerRacks() {
 
       <instancedMesh ref={ledsRef} args={[undefined, undefined, LED_COUNT]} frustumCulled={false}>
         <boxGeometry args={[0.02, 0.035, 0.08]} />
-        <meshBasicMaterial toneMapped={false} />
+        <meshBasicMaterial toneMapped={toneMapped} />
       </instancedMesh>
 
       <instancedMesh ref={traysRef} args={[undefined, undefined, 2]}>

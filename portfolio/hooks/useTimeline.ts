@@ -14,7 +14,7 @@ export function useHolds(): HoldRange[] {
  * (fonts loading, chapter panels resizing, rotation). Batched to one
  * measurement per animation frame.
  */
-export function useTimelineSync(container: RefObject<HTMLElement>) {
+export function useTimelineSync(container: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const node = container.current;
     if (!node) return;

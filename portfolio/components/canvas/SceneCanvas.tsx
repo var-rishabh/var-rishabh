@@ -3,6 +3,7 @@
 import { Component, useState, type ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerformanceMonitor } from "@react-three/drei";
+import { AgXToneMapping } from "three";
 import type { MotionValue } from "framer-motion";
 import Scene from "@/components/canvas/Scene";
 import { SignalProvider } from "@/components/canvas/machine/signal";
@@ -54,10 +55,14 @@ export default function SceneCanvas({ scrollProgress, onReady }: SceneCanvasProp
   return (
     <CanvasBoundary>
       <Canvas
+        key={profile.lite ? "lite" : "full"}
         dpr={dpr}
         gl={{ antialias: !profile.lite, powerPreference: "high-performance", stencil: false }}
         camera={{ position: [8.6, 4.9, 16.5], fov: 42, near: 0.1, far: 140 }}
-        onCreated={() => {
+        onCreated={({ gl }) => {
+          // Desktop tone-maps in the post-processing composer (Scene); the lite
+          // path has no composer, so the renderer applies the same AgX curve.
+          if (profile.lite) gl.toneMapping = AgXToneMapping;
           // Give the first frames (shader compilation) a moment before revealing.
           requestAnimationFrame(() => requestAnimationFrame(() => onReady?.()));
         }}

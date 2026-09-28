@@ -26,7 +26,7 @@ export function writeInstances(mesh: InstancedMesh, count: number, write: Instan
  * frustum culling sees the real instance spread.
  */
 export function useStaticInstances(
-  ref: RefObject<InstancedMesh>,
+  ref: RefObject<InstancedMesh | null>,
   count: number,
   write: InstanceWriter,
 ) {

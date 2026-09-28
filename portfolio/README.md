@@ -12,8 +12,8 @@ assets.
 
 ## Stack
 
-- Next.js 14 (App Router) + TypeScript
-- React Three Fiber, drei (`Environment` + `Lightformer`, `Grid`), postprocessing
+- Next.js 16 (App Router, Turbopack) · React 19 · TypeScript · Node.js ≥ 20.9
+- React Three Fiber 9, drei 10 (`Environment` + `Lightformer`, `Grid`), postprocessing 3
 - Framer Motion (root `useScroll`, per-chapter fades, spring UI)
 - Tailwind CSS · Syne (display) · Geist Mono (UI / body)
 
@@ -49,8 +49,16 @@ app/page.tsx              root useScroll() → scrollYProgress (0..1)
 cd portfolio
 npm install
 npm run dev        # http://localhost:3000
-npm run build      # production build (lint + type-check)
+npm run build      # production build (includes type-check)
+npm run lint       # ESLint 9 flat config (eslint.config.mjs)
+npm run type-check
 ```
+
+`npm install` should finish with no peer-dependency warnings and
+`found 0 vulnerabilities`. `package.json` sets `"allowScripts": { "unrs-resolver": false }`:
+newer npm blocks dependency install scripts unless listed, and that one is only a
+native-binding check (the binding itself ships as an optional dependency), so it is
+denied rather than run.
 
 The ATS resume served by the output console lives at
 `public/resume/rishabh-varshney-resume.pdf`.

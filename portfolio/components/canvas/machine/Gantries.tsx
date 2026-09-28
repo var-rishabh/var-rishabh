@@ -4,7 +4,7 @@ import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Color, Object3D, type InstancedMesh } from "three";
 import { METAL, PALETTE } from "./palette";
-import { useMachineSignal } from "./signal";
+import { useMachineSignal, useToneMapped } from "./signal";
 
 const RING_COUNT = 11;
 const FIRST_Z = -6.4;
@@ -23,6 +23,7 @@ const SEGMENTS = RING_COUNT * SIDES;
  */
 export default function Gantries() {
   const signal = useMachineSignal();
+  const toneMapped = useToneMapped();
   const framesRef = useRef<InstancedMesh>(null);
   const stripsRef = useRef<InstancedMesh>(null);
   const dummy = useMemo(() => new Object3D(), []);
@@ -73,7 +74,7 @@ export default function Gantries() {
       </instancedMesh>
       <instancedMesh ref={stripsRef} args={[undefined, undefined, stripCount]} frustumCulled={false}>
         <boxGeometry args={[SIDE_LENGTH * 0.7, 0.03, 0.06]} />
-        <meshBasicMaterial color={stripGlow} toneMapped={false} />
+        <meshBasicMaterial color={stripGlow} toneMapped={toneMapped} />
       </instancedMesh>
     </group>
   );

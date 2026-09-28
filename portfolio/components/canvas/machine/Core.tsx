@@ -6,7 +6,7 @@ import { Vector3, type Group, type InstancedMesh, type Mesh, type MeshStandardMa
 import { getHolds } from "@/lib/timeline";
 import { windowed } from "@/lib/utils";
 import { METAL, PALETTE } from "./palette";
-import { useMachineSignal } from "./signal";
+import { useMachineSignal, useToneMapped } from "./signal";
 import { useStaticInstances } from "./instancing";
 
 const LATTICE_NODES = 46;
@@ -50,6 +50,7 @@ function fibonacciSphere(count: number, radius: number): Vector3[] {
  */
 export default function Core() {
   const signal = useMachineSignal();
+  const toneMapped = useToneMapped();
 
   const heartMaterial = useRef<MeshStandardMaterial>(null);
   const knotA = useRef<Mesh>(null);
@@ -157,12 +158,12 @@ export default function Core() {
           emissive={PALETTE.amber}
           emissiveIntensity={1.5}
           flatShading
-          toneMapped={false}
+          toneMapped={toneMapped}
         />
       </mesh>
       <mesh scale={0.3}>
         <sphereGeometry args={[1, 24, 24]} />
-        <meshBasicMaterial color={PALETTE.amberHot} toneMapped={false} />
+        <meshBasicMaterial color={PALETTE.amberHot} toneMapped={toneMapped} />
       </mesh>
 
       {/* Neural paths */}
@@ -176,7 +177,7 @@ export default function Core() {
           color="#0a1220"
           emissive={PALETTE.blue}
           emissiveIntensity={2.2}
-          toneMapped={false}
+          toneMapped={toneMapped}
         />
       </mesh>
 
@@ -184,13 +185,13 @@ export default function Core() {
       <group ref={lattice}>
         <instancedMesh ref={nodesRef} args={[undefined, undefined, LATTICE_NODES]}>
           <octahedronGeometry args={[0.045, 0]} />
-          <meshStandardMaterial color="#0a1220" emissive={PALETTE.blueSoft} emissiveIntensity={1.8} toneMapped={false} />
+          <meshStandardMaterial color="#0a1220" emissive={PALETTE.blueSoft} emissiveIntensity={1.8} toneMapped={toneMapped} />
         </instancedMesh>
         <lineSegments>
           <bufferGeometry>
-            <bufferAttribute attach="attributes-position" array={links} count={links.length / 3} itemSize={3} />
+            <bufferAttribute attach="attributes-position" args={[links, 3]} />
           </bufferGeometry>
-          <lineBasicMaterial color={PALETTE.blue} transparent opacity={0.32} toneMapped={false} />
+          <lineBasicMaterial color={PALETTE.blue} transparent opacity={0.32} toneMapped={toneMapped} />
         </lineSegments>
       </group>
 
@@ -229,7 +230,7 @@ export default function Core() {
         </mesh>
         <mesh>
           <torusGeometry args={[FRAME_RADIUS - 0.26, 0.018, 8, 128]} />
-          <meshStandardMaterial color="#1a0d03" emissive={PALETTE.amber} emissiveIntensity={1.4} toneMapped={false} />
+          <meshStandardMaterial color="#1a0d03" emissive={PALETTE.amber} emissiveIntensity={1.4} toneMapped={toneMapped} />
         </mesh>
         <instancedMesh ref={strutsRef} args={[undefined, undefined, STRUTS]}>
           <cylinderGeometry args={[0.05, 0.05, FRAME_RADIUS - 3.15, 8]} />

@@ -4,9 +4,10 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { CatmullRomCurve3, Color, Matrix4, TubeGeometry, Vector3, type InstancedMesh } from "three";
 import { METAL, PALETTE } from "./palette";
-import { useMachineSignal } from "./signal";
+import { useMachineSignal, useToneMapped } from "./signal";
 import { useStaticInstances } from "./instancing";
 import { RACK_LAYOUT } from "./ServerRacks";
+import { seededRandom } from "@/lib/utils";
 
 const LANE_START_Z = -9.2;
 const LANE_END_Z = -47.5;
@@ -43,6 +44,7 @@ const PACKETS = LANES.length * PACKETS_PER_LANE;
  */
 export default function DataConduits() {
   const signal = useMachineSignal();
+  const toneMapped = useToneMapped();
   const sheathsRef = useRef<InstancedMesh>(null);
   const fibresRef = useRef<InstancedMesh>(null);
   const packetsRef = useRef<InstancedMesh>(null);
@@ -69,10 +71,10 @@ export default function DataConduits() {
     [],
   );
 
-  const packetPhase = useMemo(
-    () => Float32Array.from({ length: PACKETS }, () => Math.random()),
-    [],
-  );
+  const packetPhase = useMemo(() => {
+    const random = seededRandom(7);
+    return Float32Array.from({ length: PACKETS }, () => random());
+  }, []);
 
   useStaticInstances(sheathsRef, SHEATHS, (i, dummy) => {
     const lane = LANES[Math.floor(i / SHEATH_OFFSETS.length)];
@@ -124,7 +126,7 @@ export default function DataConduits() {
             <meshStandardMaterial {...METAL.graphite} />
           </mesh>
           <mesh geometry={trunk.fibre}>
-            <meshBasicMaterial color={trunk.glow} toneMapped={false} />
+            <meshBasicMaterial color={trunk.glow} toneMapped={toneMapped} />
           </mesh>
         </group>
       ))}
@@ -136,12 +138,12 @@ export default function DataConduits() {
 
       <instancedMesh ref={fibresRef} args={[undefined, undefined, LANES.length]}>
         <cylinderGeometry args={[0.014, 0.014, LANE_LENGTH, 6]} />
-        <meshBasicMaterial toneMapped={false} />
+        <meshBasicMaterial toneMapped={toneMapped} />
       </instancedMesh>
 
       <instancedMesh ref={packetsRef} args={[undefined, undefined, PACKETS]} frustumCulled={false}>
         <boxGeometry args={[0.05, 0.05, 0.6]} />
-        <meshBasicMaterial toneMapped={false} />
+        <meshBasicMaterial toneMapped={toneMapped} />
       </instancedMesh>
     </group>
   );

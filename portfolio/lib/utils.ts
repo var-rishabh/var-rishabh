@@ -15,6 +15,22 @@ export function lerp(start: number, end: number, t: number): number {
   return start + (end - start) * t;
 }
 
+/**
+ * Small deterministic PRNG (mulberry32). Used for procedural layout so the
+ * machine looks identical on every render / reload and stays pure — no
+ * Math.random() during render.
+ */
+export function seededRandom(seed: number): () => number {
+  let state = seed >>> 0;
+  return () => {
+    state = (state + 0x6d2b79f5) >>> 0;
+    let t = state;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 /** Hermite ease between `edge0` and `edge1`, clamped to 0..1. */
 export function smoothstep(edge0: number, edge1: number, value: number): number {
   const t = clamp((value - edge0) / (edge1 - edge0), 0, 1);

@@ -1,8 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { useThree } from "@react-three/fiber";
-import { AgXToneMapping, Mesh, type Material } from "three";
 import { Environment, Grid, Lightformer } from "@react-three/drei";
 import { Bloom, EffectComposer, ToneMapping, Vignette } from "@react-three/postprocessing";
 import CameraRig from "@/components/canvas/CameraRig";
@@ -48,33 +45,6 @@ function MachineLights({ lite }: { lite: boolean }) {
       ))}
     </>
   );
-}
-
-/**
- * Lite profile has no post-processing, so the HDR glow colours (emissives
- * pushed well above 1 for bloom) would clip to flat yellow/white. Instead
- * the renderer tone-maps everything with AgX — the same curve the desktop
- * composer applies — so glows keep their hue. Mounted last so every
- * machine material already exists.
- */
-function LiteToneMapping() {
-  const gl = useThree((state) => state.gl);
-  const scene = useThree((state) => state.scene);
-
-  useEffect(() => {
-    gl.toneMapping = AgXToneMapping;
-    scene.traverse((object) => {
-      if (!(object instanceof Mesh)) return;
-      const materials: Material[] = Array.isArray(object.material) ? object.material : [object.material];
-      materials.forEach((material) => {
-        if (material.toneMapped) return;
-        material.toneMapped = true;
-        material.needsUpdate = true;
-      });
-    });
-  }, [gl, scene]);
-
-  return null;
 }
 
 /**
@@ -132,7 +102,6 @@ export default function Scene({ lite }: { lite: boolean }) {
         fadeStrength={1.4}
       />
 
-      {lite && <LiteToneMapping />}
       {!lite && (
         <EffectComposer multisampling={4}>
           <Bloom mipmapBlur intensity={0.85} luminanceThreshold={0.85} luminanceSmoothing={0.2} radius={0.72} />

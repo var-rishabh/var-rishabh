@@ -15,7 +15,7 @@ import {
 import { getHolds } from "@/lib/timeline";
 import { smoothstep } from "@/lib/utils";
 import { METAL, PALETTE } from "./palette";
-import { useMachineSignal } from "./signal";
+import { useMachineSignal, useToneMapped } from "./signal";
 import { useStaticInstances } from "./instancing";
 
 export const GATE_Z = -49.5;
@@ -52,6 +52,7 @@ function createGlowTexture(): CanvasTexture {
  */
 export default function OutputGate() {
   const signal = useMachineSignal();
+  const toneMapped = useToneMapped();
   const crown = useRef<Group>(null);
   const blades = useRef<Array<Group | null>>([]);
   const light = useRef<PointLight>(null);
@@ -98,7 +99,7 @@ export default function OutputGate() {
       </mesh>
       <mesh>
         <torusGeometry args={[2.82, 0.028, 8, 128]} />
-        <meshBasicMaterial color={ringGlow} toneMapped={false} />
+        <meshBasicMaterial color={ringGlow} toneMapped={toneMapped} />
       </mesh>
 
       <group ref={crown}>
@@ -131,7 +132,7 @@ export default function OutputGate() {
           transparent
           blending={AdditiveBlending}
           depthWrite={false}
-          toneMapped={false}
+          toneMapped={toneMapped}
           fog={false}
         />
       </mesh>

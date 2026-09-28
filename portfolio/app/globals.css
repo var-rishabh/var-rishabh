@@ -15,6 +15,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Non-static scroll container: framer-motion's useScroll({ target }) warns
+     in dev otherwise. No layout effect — offsetParent lookups stop at <body>. */
+  position: relative;
 }
 
 html,
