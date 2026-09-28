@@ -68,7 +68,7 @@ function ConsoleAction({ className, ...props }: React.ComponentProps<typeof moti
 
 function OutputConsole() {
   const [copied, setCopied] = useState<string | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   useEffect(() => () => clearTimeout(timer.current), []);
 
   async function handleCopy(entry: ConsoleCommand) {

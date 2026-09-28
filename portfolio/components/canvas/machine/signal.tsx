@@ -24,6 +24,7 @@ export interface MachineSignal {
 }
 
 const SignalContext = createContext<MutableRefObject<MachineSignal> | null>(null);
+const LiteContext = createContext(false);
 
 interface SignalProviderProps {
   scrollProgress: MotionValue<number>;
@@ -53,11 +54,26 @@ export function SignalProvider({ scrollProgress, calm, lite, children }: SignalP
     s.lite = lite;
   }, -1);
 
-  return <SignalContext.Provider value={signal}>{children}</SignalContext.Provider>;
+  return (
+    <SignalContext.Provider value={signal}>
+      <LiteContext.Provider value={lite}>{children}</LiteContext.Provider>
+    </SignalContext.Provider>
+  );
 }
 
 export function useMachineSignal(): MutableRefObject<MachineSignal> {
   const signal = useContext(SignalContext);
   if (!signal) throw new Error("useMachineSignal must be used inside <SignalProvider>");
   return signal;
+}
+
+/**
+ * Whether glow materials should go through tone mapping. The desktop path
+ * renders HDR glow colours (> 1) into the post-processing composer, which
+ * tone-maps once at the end, so those materials opt out (`false`). The lite
+ * path has no composer — the renderer tone-maps instead — so they must opt
+ * in (`true`) or the over-bright colours clip to flat yellow/white.
+ */
+export function useToneMapped(): boolean {
+  return useContext(LiteContext);
 }

@@ -59,6 +59,10 @@ function curveParameter(shots: Shot[], progress: number): number {
   return 1;
 }
 
+/** Per-frame scratch vectors (module scope: temporaries, not React state). */
+const position = new Vector3();
+const target = new Vector3();
+
 function fovForAspect(aspect: number): number {
   if (aspect < 0.8) return 64;
   if (aspect < 1.25) return 52;
@@ -87,8 +91,6 @@ export default function CameraRig() {
 
   const plan = useRef<{ holds: HoldRange[]; shots: Shot[] } | null>(null);
   const sway = useRef(new Vector3());
-  const position = useMemo(() => new Vector3(), []);
-  const target = useMemo(() => new Vector3(), []);
 
   useFrame((state, delta) => {
     const camera = state.camera;
