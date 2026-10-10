@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Chapter from "@/components/hud/Chapter";
 import { ChapterTag, Headline } from "@/components/hud/Typography";
-import { CONTACT } from "@/data/chapters";
+import { CONTACT, STACK } from "@/data/chapters";
 import { copyText } from "@/lib/clipboard";
 import { revealItem, SPRING } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -92,6 +92,19 @@ function OutputConsole() {
       </div>
 
       <ul className="space-y-4 p-4 text-[12.5px] sm:p-5">
+        <li>
+          <p className="text-graphite">
+            <span className="text-amber">$</span> cat toolchain.cfg
+          </p>
+          <dl className="mt-1.5 space-y-1" aria-label="Technical stack">
+            {STACK.map(({ group, items }) => (
+              <div key={group} className="grid gap-0.5 sm:grid-cols-[8.5rem_1fr] sm:gap-3">
+                <dt className="text-telemetry uppercase leading-[1.9] text-titanium">{group}</dt>
+                <dd className="text-chrome/90">{items.join(" · ")}</dd>
+              </div>
+            ))}
+          </dl>
+        </li>
         {COMMANDS.map((entry) => (
           <li key={entry.id}>
             <p className="text-graphite">
@@ -145,12 +158,12 @@ function OutputConsole() {
   );
 }
 
-/** Chapter 04 — the output gate opens: resume export + contact commands. */
+/** Chapter 05 — the output gate opens: toolchain, resume and contact commands. */
 export default function SystemOutput() {
   return (
-    <Chapter index={3}>
+    <Chapter index={4}>
       <div className="scrim w-full max-w-2xl">
-        <ChapterTag index={3} aside="EXIT CODE 0" />
+        <ChapterTag index={4} aside="EXIT CODE 0" />
         <Headline id="output-title" lines={["System", "Ready."]} className="mt-4" />
         <OutputConsole />
         <motion.p variants={revealItem} className="mt-5 text-telemetry uppercase text-graphite">

@@ -73,7 +73,8 @@ export default function OutputGate() {
   useFrame((state, delta) => {
     const { progress, energy, motion } = signal.current;
     const t = state.clock.elapsedTime * motion;
-    const output = getHolds()[3];
+    const holds = getHolds();
+    const output = holds[holds.length - 1];
     const ready = smoothstep(output.start - 0.12, output.start + 0.02, progress);
 
     if (crown.current) {

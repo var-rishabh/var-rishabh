@@ -8,6 +8,7 @@ import BootCurtain from "@/components/hud/BootCurtain";
 import Initialization from "@/components/chapters/Initialization";
 import RuntimeCore from "@/components/chapters/RuntimeCore";
 import DataChannels from "@/components/chapters/DataChannels";
+import EdgeNodes from "@/components/chapters/EdgeNodes";
 import SystemOutput from "@/components/chapters/SystemOutput";
 import { useTimelineSync } from "@/hooks/useTimeline";
 
@@ -49,6 +50,7 @@ export default function Home() {
         <Initialization ready={ready} />
         <RuntimeCore />
         <DataChannels />
+        <EdgeNodes />
         <SystemOutput />
       </main>
 
