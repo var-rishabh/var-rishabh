@@ -27,7 +27,7 @@ interface Shot {
  * subject to the side opposite the chapter copy.
  */
 function buildShots(holds: HoldRange[]): Shot[] {
-  const [init, core, channels, output] = holds;
+  const [init, core, channels, nodes, output] = holds;
   const between = (a: number, b: number) => (a + b) / 2;
 
   return [
@@ -37,9 +37,14 @@ function buildShots(holds: HoldRange[]): Shot[] {
     { at: core.start, position: [3.1, 0.75, 6.3], target: [-1.7, 0, 0], ease: true },
     { at: core.end, position: [2.3, 0.5, 5], target: [-1.5, 0, 0] },
     { at: between(core.end, channels.start), position: [0.4, 7.2, -1.6], target: [0, 0.6, -16], ease: true },
+    // Data channels: copy on the right, so the camera hugs the left racks.
     { at: channels.start, position: [-1.1, 1.15, -9.8], target: [1.6, 0.3, -32], ease: true },
-    { at: channels.end, position: [-0.7, 0.95, -19.8], target: [1.8, 0.2, -42] },
-    { at: between(channels.end, output.start), position: [0.2, 0.6, -28.5], target: [0, 0.4, -52], ease: true },
+    { at: channels.end, position: [-0.8, 1.0, -16.5], target: [1.8, 0.2, -38] },
+    { at: between(channels.end, nodes.start), position: [0.2, 1.3, -19.5], target: [0, 0.4, -40], ease: true },
+    // Edge nodes: copy on the left, camera crosses to the right racks.
+    { at: nodes.start, position: [1.3, 1.35, -22.5], target: [-1.8, 0.3, -44], ease: true },
+    { at: nodes.end, position: [1.0, 1.15, -28.5], target: [-1.7, 0.3, -47] },
+    { at: between(nodes.end, output.start), position: [0.3, 0.7, -31.5], target: [0, 0.4, -52], ease: true },
     { at: output.start, position: [1.4, 0.85, -35.2], target: [-1.9, 0.4, GATE_Z], ease: true },
     { at: output.end, position: [0.9, 0.65, -38.4], target: [-1.6, 0.4, GATE_Z] },
   ];

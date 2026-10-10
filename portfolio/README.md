@@ -1,10 +1,12 @@
 # The Machine Room — Rishabh Varshney
 
 A cinematic, scroll-driven WebGL portfolio. The page is a futuristic
-computational machine: the camera starts wide, dives into the glowing
-runtime core (production experience), flies down a corridor of server racks
-and data channels (real-time projects + stack), and arrives at the output
-gate — "System Ready." (résumé + contact). Copy lives in `data/chapters.ts`.
+computational machine: the camera starts wide (identity + a field map of
+every domain shipped in), dives into the glowing runtime core (current role:
+cloud telephony at RUNO), flies down a corridor of server racks — data
+channels (earlier roles), then edge nodes (freelance projects + stack) — and
+arrives at the output gate — "System Ready." (résumé + contact). All copy
+lives in `data/chapters.ts`.
 
 Everything in 3D is **procedural** (React Three Fiber primitives, instancing
 and a runtime-drawn glow texture). There are no `.gltf/.glb`, HDRI or image
@@ -27,7 +29,7 @@ app/page.tsx              root useScroll() → scrollYProgress (0..1)
 │     └─ Scene            lights, Lightformer env map, the machine parts:
 │        Core · Gantries · ServerRacks · DataConduits · OutputGate
 ├─ hud/Hud                chapter nav, progress rail, depth telemetry
-└─ chapters/*             4 sticky, cross-fading chapter sections
+└─ chapters/*             5 sticky, cross-fading chapter sections
 ```
 
 - `data/chapters.ts` holds chapter lengths and all copy. `lib/timeline.ts`
