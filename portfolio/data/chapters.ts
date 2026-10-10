@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/paths";
+
 /**
  * Chapter layout + copy for the Machine Room. `screens` is the desktop
  * scroll length of each chapter in viewport heights: one screen is the
@@ -158,5 +160,6 @@ export const CONTACT = {
   email: "rishabhvar.11@gmail.com",
   github: "https://github.com/var-rishabh",
   linkedin: "https://www.linkedin.com/in/rishabh-builds/",
-  resume: "/resume/rishabh-varshney-resume.pdf",
+  // Plain <a> link into public/ — needs the basePath (see lib/paths.ts).
+  resume: withBasePath("/resume/rishabh-varshney-resume.pdf"),
 } as const;
