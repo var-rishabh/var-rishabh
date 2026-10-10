@@ -64,3 +64,15 @@ denied rather than run.
 
 The resume served by the output console lives at
 `public/resume/rishabh-varshney-resume.pdf`.
+
+## Deployment
+
+The site is a static export (`output: "export"`) served by GitHub Pages at
+https://var-rishabh.github.io/var-rishabh/, so `next.config.mjs` sets
+`basePath: "/var-rishabh"`. `.github/workflows/deploy.yml` builds `portfolio/`
+and publishes `portfolio/out` on every push to `main`.
+
+- `next/link` and `next/image` get the base path automatically. Plain
+  `<a href>`, `<img src>`, CSS `url()` or `fetch()` paths into `public/` must
+  use `withBasePath()` from `lib/paths.ts`.
+- Locally, `npm run dev` serves the site at http://localhost:3000/var-rishabh/.
