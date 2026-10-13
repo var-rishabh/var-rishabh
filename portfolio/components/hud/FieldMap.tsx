@@ -1,17 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FIELDS } from "@/data/chapters";
+import { FIELDS, FIELDS_WORKED } from "@/data/chapters";
 import { revealItem } from "@/lib/motion";
 
 /**
- * Every field Rishabh has shipped in, as a system readout: index, field
- * and where it came from. Desktop shows the full table with sources;
+ * Selected fields Rishabh has shipped in, as a system readout: index, field
+ * and where it came from (the header carries the overall total). Desktop shows the full table with sources;
  * phones get a compact two-column grid so the hero stays short.
  */
 export default function FieldMap({ className }: { className?: string }) {
-  const count = String(FIELDS.length).padStart(2, "0");
-
   return (
     <motion.section variants={revealItem} className={`panel corner-marks p-4 ${className ?? ""}`} aria-labelledby="field-map-title">
       <header className="flex items-baseline justify-between border-b border-line pb-2 text-telemetry uppercase">
@@ -19,7 +17,7 @@ export default function FieldMap({ className }: { className?: string }) {
           field.map
         </h2>
         <span className="text-graphite">
-          <span className="font-display text-base font-bold tracking-normal text-amber">{count}</span> fields online
+          <span className="font-display text-base font-bold tracking-normal text-amber">{FIELDS_WORKED}</span> fields worked in
         </span>
       </header>
 
