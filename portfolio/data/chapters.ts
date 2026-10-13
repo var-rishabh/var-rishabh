@@ -88,6 +88,7 @@ export const CURRENT_ROLE: SystemModule = {
     "CloudWatch and Crashlytics observability across the call pipeline — 60% faster issue resolution as first responder.",
   ],
   stack: ["Node.js", "TypeScript", "AWS Lambda", "Asterisk", "SIP", "WebRTC", "SQS", "Gemini"],
+  link: { href: "https://runo.ai/", label: "runo.ai" },
 };
 
 export const EARLIER_ROLES: SystemModule[] = [
@@ -103,6 +104,7 @@ export const EARLIER_ROLES: SystemModule[] = [
       "RASA NLP support chatbot connected to the React storefront over WebSockets — 200+ queries a day, +30% engagement.",
     ],
     stack: ["Python", "FastAPI", "MongoDB", "RASA NLP", "React", "WebSockets"],
+    link: { href: "https://r3factory.com/", label: "r3factory.com" },
   },
   {
     code: "EXP-03",
@@ -116,6 +118,7 @@ export const EARLIER_ROLES: SystemModule[] = [
       "Node.js IoT service layer linking 50+ devices to a mobile app over MQTT pub/sub with token-secured webhooks — 99.9% availability.",
     ],
     stack: ["MongoDB", "Express", "React", "Node.js", "MQTT", "AWS"],
+    link: { href: "https://otomator.com/", label: "otomator.com" },
   },
 ];
 

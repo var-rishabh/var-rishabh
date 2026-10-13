@@ -55,6 +55,9 @@ export default function Initialization({ ready }: { ready: boolean }) {
             <HudButton href={CONTACT.resume} download variant="ghost">
               Resume ↓
             </HudButton>
+            <HudButton href={CONTACT.github} target="_blank" rel="noreferrer noopener" variant="ghost">
+              GitHub ↗
+            </HudButton>
           </motion.div>
           <motion.p variants={revealItem} className="mt-5 text-telemetry uppercase text-graphite">
             Status: <span className="text-amber">Available for impactful roles</span> {"//"} Loc: Hyderabad / Remote
