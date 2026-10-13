@@ -65,10 +65,14 @@ export const FIELDS: Array<{ name: string; source: string }> = [
   { name: "Fintech", source: "FINACCRU" },
 ];
 
+/** Headline totals used across the site (hero metrics, field map, page metadata). */
+export const YEARS_SHIPPING = "5+";
+export const FIELDS_WORKED = "10+";
+
 /** Headline figures shown in chapter 01 — straight from the resume. */
 export const HEADLINE_METRICS = [
-  { value: "3+", label: "Years shipping" },
-  { value: String(FIELDS.length).padStart(2, "0"), label: "Fields worked in" },
+  { value: YEARS_SHIPPING, label: "Years shipping" },
+  { value: FIELDS_WORKED, label: "Fields worked in" },
   { value: "20k+", label: "Users on calling platform" },
   { value: "10k+", label: "Charge points online" },
 ] as const;
