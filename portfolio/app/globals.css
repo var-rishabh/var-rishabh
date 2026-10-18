@@ -18,6 +18,32 @@ html {
   /* Non-static scroll container: framer-motion's useScroll({ target }) warns
      in dev otherwise. No layout effect — offsetParent lookups stop at <body>. */
   position: relative;
+  /* One gesture = one chapter. Rest points are the .snap-stop markers
+     (SnapStops.tsx); between them the page never settles. */
+  scroll-snap-type: y mandatory;
+  /* No rubber-banding / pull-to-refresh past the first or last chapter. */
+  overscroll-behavior-y: none;
+}
+/* While the gesture controller animates the scroll itself, native snapping
+   and smoothing would fight it. */
+html.is-travelling {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.snap-stops {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  pointer-events: none;
+}
+.snap-stop {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 html,
