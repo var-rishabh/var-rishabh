@@ -105,6 +105,7 @@ export default function Chapter({ index, children, valign = "center", revealed }
       ref={sectionRef}
       aria-labelledby={`${chapter.id}-title`}
       className="relative"
+      data-overflow={Math.max(0, Math.round(-layout.stickyTop))}
       style={{ height: layout.height }}
     >
       <div
