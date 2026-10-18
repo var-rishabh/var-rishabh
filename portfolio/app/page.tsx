@@ -5,12 +5,14 @@ import dynamic from "next/dynamic";
 import { useScroll } from "framer-motion";
 import Hud from "@/components/hud/Hud";
 import BootCurtain from "@/components/hud/BootCurtain";
+import SnapStops from "@/components/hud/SnapStops";
 import Initialization from "@/components/chapters/Initialization";
 import RuntimeCore from "@/components/chapters/RuntimeCore";
 import DataChannels from "@/components/chapters/DataChannels";
 import EdgeNodes from "@/components/chapters/EdgeNodes";
 import SystemOutput from "@/components/chapters/SystemOutput";
 import { useTimelineSync } from "@/hooks/useTimeline";
+import { useSectionScroll } from "@/hooks/useSectionScroll";
 
 // three.js never runs on the server: the canvas is client-only.
 const SceneCanvas = dynamic(() => import("@/components/canvas/SceneCanvas"), { ssr: false });
@@ -31,6 +33,7 @@ export default function Home() {
   const markReady = useCallback(() => setReady(true), []);
   const mainRef = useRef<HTMLElement>(null);
   useTimelineSync(mainRef);
+  useSectionScroll();
 
   useEffect(() => {
     const timeout = setTimeout(markReady, BOOT_TIMEOUT_MS);
@@ -53,6 +56,8 @@ export default function Home() {
         <EdgeNodes />
         <SystemOutput />
       </main>
+
+      <SnapStops container={mainRef} />
 
       <div className="film-grain" aria-hidden />
       <BootCurtain ready={ready} />
