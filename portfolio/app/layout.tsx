@@ -1,36 +1,33 @@
 import type { Metadata, Viewport } from "next";
 import { Syne } from "next/font/google";
-import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-display",
-  display: "swap",
-});
+const syne = Syne({ subsets: ["latin"], weight: ["700", "800"], variable: "--font-display", display: "swap" });
+
+const description =
+  "Rishabh Varshney, software engineer in Hyderabad: real-time calling, cloud and AI systems across 10+ fields. Five years of work as one interactive sculpture.";
 
 export const metadata: Metadata = {
-  title: "Rishabh Varshney — Software Engineer · Full-Stack, Cloud & Real-time",
-  description:
-    "The Machine Room: a procedurally generated WebGL portfolio. Descend through a working machine to explore Rishabh Varshney's cloud telephony, real-time and AI work across 10+ fields.",
+  title: "Rishabh Varshney, Software Engineer",
+  description,
   authors: [{ name: "Rishabh Varshney", url: "https://github.com/var-rishabh" }],
-  openGraph: {
-    title: "Rishabh Varshney — Software Engineer · Full-Stack, Cloud & Real-time",
-    description: "Descend through the Machine Room: cloud telephony, EV charging, fintech and more — 10+ fields, one engineer.",
-    type: "website",
-  },
+  openGraph: { title: "Rishabh Varshney, Software Engineer", description, type: "website" },
 };
 
-export const viewport: Viewport = {
-  themeColor: "#050505",
-  colorScheme: "dark",
-};
+export const viewport: Viewport = { themeColor: "#050506", colorScheme: "dark" };
+
+// Hides reveal targets before first paint, only when JS runs and motion is welcome.
+// If the app bundle never boots, the class is removed after 3 s so content always shows.
+const revealScript = `if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('anim');setTimeout(function(){if(!window.__ready)r.classList.remove('anim')},3000)}`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${GeistMono.variable}`}>
-      <body className="bg-void font-mono text-silver antialiased">{children}</body>
+    <html lang="en" className={`${syne.variable} ${GeistSans.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: revealScript }} />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

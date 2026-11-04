@@ -1,209 +1,420 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --color-void: #050505;
-  --color-chrome: #eceef0;
-  --color-silver: #bfc3c9;
-  --color-graphite: #7b8087;
-  --color-amber: #ff9a3c;
-  --color-titanium: #86a9d9;
-  --color-line: rgba(255, 255, 255, 0.1);
-  color-scheme: dark;
+  --void: #050506;
+  --chrome: #eceef0;
+  --silver: #a9adb4;
+  --dim: #6f747c;
+  --line: #ffffff1f;
+  --panel: #0c0d10e6;
+  --shade: #050506d9;
+  --ember: #ff9a3c14;
+  --select: #ff9a3c52;
+  --accent: #ff9a3c;
+  /* One colour per company: the sculpture reads these too. */
+  --c-runo: #ff9a3c;
+  --c-r3: #ff6b4a;
+  --c-oto: #86a9d9;
+  --c-xev: #e8c15a;
+  --c-fin: #5fc7b8;
+  --c-none: #3a3d42;
+  --display: var(--font-display), system-ui, sans-serif;
+  --text: var(--font-geist-sans), system-ui, sans-serif;
+  --gutter: clamp(20px, 5vw, 56px);
+  --measure: 34rem;
 }
 
-html {
-  scroll-behavior: smooth;
-  /* Non-static scroll container: framer-motion's useScroll({ target }) warns
-     in dev otherwise. No layout effect — offsetParent lookups stop at <body>. */
-  position: relative;
-  /* One gesture = one chapter. Rest points are the .snap-stop markers
-     (SnapStops.tsx); between them the page never settles. */
-  scroll-snap-type: y mandatory;
-  /* No rubber-banding / pull-to-refresh past the first or last chapter. */
-  overscroll-behavior-y: none;
-}
-/* While the gesture controller animates the scroll itself, native snapping
-   and smoothing would fight it. */
-html.is-travelling {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-
-.snap-stops {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 1px;
-  pointer-events: none;
-}
-.snap-stop {
-  position: absolute;
-  left: 0;
-  width: 1px;
-  height: 1px;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
 body {
-  background-color: var(--color-void);
-  color: var(--color-silver);
+  overflow-x: clip;
+  background: var(--void);
+  color: var(--silver);
 }
 
-/* No-JS safety net: the boot curtain removes itself even if React never does. */
-.boot-curtain {
-  animation: curtain-timeout 0.6s ease 4.5s forwards;
+html {
+  scroll-snap-type: y proximity;
 }
-@keyframes curtain-timeout {
-  to {
-    opacity: 0;
-    visibility: hidden;
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
-  overflow-x: hidden;
+  font: 400 1rem/1.6 var(--text);
+  -webkit-font-smoothing: antialiased;
+  /* Shown only when WebGL is unavailable: the canvas covers it otherwise. */
+  background: radial-gradient(60% 50% at 70% 40%, var(--ember), transparent), var(--void);
 }
 
-::selection {
-  background: rgba(255, 154, 60, 0.32);
-  color: #fff;
+a {
+  color: var(--chrome);
+  text-underline-offset: 4px;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-void);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.14);
+a:hover {
+  color: var(--accent);
 }
 
 :focus-visible {
-  outline: 1px solid var(--color-amber);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-@layer components {
-  /*
-   * Fixed WebGL layer: never intercepts pointer events. Sized to the large
-   * viewport (lvh) so the mobile URL bar collapsing mid-scroll doesn't
-   * resize — and reallocate — the canvas. The gradient is the static
-   * fallback when WebGL is unavailable (on a fixed layer, so it never
-   * repaints on scroll, unlike background-attachment: fixed).
-   */
-  .canvas-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100lvh;
-    z-index: 0;
-    pointer-events: none;
-    background-image: radial-gradient(ellipse 60% 45% at 62% 40%, rgba(255, 154, 60, 0.07), transparent 70%);
-  }
-
-  .section-shell {
-    width: 100%;
-    max-width: 1280px;
-    margin-inline: auto;
-    padding-inline: 20px;
-  }
-  @media (min-width: 768px) {
-    .section-shell {
-      padding-inline: 48px;
-    }
-  }
-
-  /*
-   * Readability scrim: an invisible radial falloff of void behind floating
-   * copy. No edges, no box — the machine just darkens around the text.
-   */
-  .scrim {
-    position: relative;
-    isolation: isolate;
-  }
-  .scrim::before {
-    content: "";
-    position: absolute;
-    inset: -22% -26%;
-    z-index: -1;
-    pointer-events: none;
-    background: radial-gradient(
-      closest-side,
-      rgba(5, 5, 5, 0.9) 0%,
-      rgba(5, 5, 5, 0.78) 42%,
-      rgba(5, 5, 5, 0.42) 70%,
-      rgba(5, 5, 5, 0) 100%
-    );
-  }
-
-  /* Hairline-bordered telemetry surface (module readouts, terminal). */
-  .panel {
-    border: 1px solid var(--color-line);
-    background: linear-gradient(180deg, rgba(12, 12, 13, 0.82), rgba(7, 7, 8, 0.72));
-  }
-
-  .corner-marks {
-    position: relative;
-  }
-  .corner-marks::after {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    pointer-events: none;
-    background:
-      linear-gradient(var(--color-amber), var(--color-amber)) top left / 10px 1px,
-      linear-gradient(var(--color-amber), var(--color-amber)) top left / 1px 10px,
-      linear-gradient(var(--color-amber), var(--color-amber)) bottom right / 10px 1px,
-      linear-gradient(var(--color-amber), var(--color-amber)) bottom right / 1px 10px;
-    background-repeat: no-repeat;
-  }
+::selection {
+  background: var(--select);
+  color: var(--chrome);
 }
 
-/* Cinematic finish: edge vignette + film grain, both above the canvas. */
-.screen-vignette {
+/* The sculpture sits behind everything; lvh keeps it still while the phone URL bar moves. */
+.stage {
   position: fixed;
   inset: 0;
-  z-index: 15;
-  pointer-events: none;
-  background: radial-gradient(ellipse 120% 90% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.7) 100%);
+  width: 100%;
+  height: 100lvh;
+  display: block;
 }
 
-.film-grain {
+/* Keeps copy legible where it overlaps the sculpture. */
+main::before {
+  content: "";
   position: fixed;
-  inset: -50%;
-  z-index: 40;
+  inset: 0;
   pointer-events: none;
-  opacity: 0.06;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  animation: grain 0.9s steps(4) infinite;
+  background: linear-gradient(90deg, var(--void) 0%, var(--shade) 30%, transparent 58%);
 }
 
-@keyframes grain {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-3%, 2%); }
-  50% { transform: translate(2%, -4%); }
-  75% { transform: translate(-2%, -1%); }
-  100% { transform: translate(0, 0); }
+main {
+  position: relative;
+  /* Sideways drags reach the harp on touch screens; vertical drags still scroll. */
+  touch-action: pan-y pinch-zoom;
 }
 
-/* Phones / low-power: skip the grain layer (a 4×-viewport animated layer). */
-@media (max-width: 768px), (pointer: coarse) {
-  .film-grain {
+.tip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--chrome);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+/* Nav */
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  align-items: baseline;
+  gap: 32px;
+  padding: 22px var(--gutter) 28px;
+  background: linear-gradient(var(--void), transparent);
+}
+
+.brand {
+  font: 700 1.125rem/1 var(--display);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.nav nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.9375rem;
+}
+
+.nav nav a {
+  color: var(--silver);
+  text-decoration: none;
+}
+
+.nav nav a:hover,
+.nav nav a[aria-current] {
+  color: var(--chrome);
+  text-decoration: underline;
+}
+
+.sound {
+  font: inherit;
+  font-size: 0.9375rem;
+  color: var(--silver);
+  background: none;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.sound:hover,
+.sound[aria-pressed="true"] {
+  color: var(--chrome);
+  border-color: var(--accent);
+}
+
+/* Sections */
+.sec {
+  position: relative;
+  min-height: 100svh;
+  width: min(100%, 1360px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  padding: 120px var(--gutter) 88px;
+  scroll-snap-align: start;
+}
+
+.copy {
+  max-width: var(--measure);
+}
+
+#hero .copy {
+  max-width: 44rem;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  color: var(--chrome);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4.4vw, 4.1rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4.4vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.lede {
+  font-size: 1.1875rem;
+  margin-top: 22px;
+  max-width: 30rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 30px;
+}
+
+.btn {
+  background: var(--chrome);
+  color: var(--void);
+  padding: 14px 22px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--void);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.hint {
+  margin-top: 28px;
+  font-size: 0.875rem;
+  color: var(--dim);
+  max-width: 28rem;
+}
+
+.touch {
+  display: none;
+}
+
+@media (hover: none) {
+  .mouse {
     display: none;
   }
+
+  .touch {
+    display: inline;
+  }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 32px;
+  margin-top: 36px;
+}
+
+.metrics div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.metrics dd {
+  font: 800 clamp(2rem, 3.4vw, 2.75rem) / 1 var(--display);
+  color: var(--chrome);
+}
+
+.metrics dt {
+  font-size: 0.875rem;
+  color: var(--dim);
+  margin-top: 6px;
+}
+
+.fields {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 32px;
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--chrome);
+}
+
+.fields span {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--dim);
+}
+
+.entry {
+  margin-top: 36px;
+  padding-left: 18px;
+  border-left: 2px solid var(--c);
+}
+
+.entry header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+}
+
+.entry header a {
+  font-size: 0.875rem;
+}
+
+.meta {
+  font-size: 0.875rem;
+  color: var(--dim);
+  margin-top: 6px;
+}
+
+.entry ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.entry li {
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.toolbox {
+  margin-top: 44px;
+}
+
+.stack div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.9375rem;
+}
+
+.stack dt {
+  color: var(--dim);
+}
+
+.foot {
+  margin-top: 56px;
+  font-size: 0.8125rem;
+  color: var(--dim);
+}
+
+/* Reveal start state, only while the reveal script is active (see layout.tsx). */
+.anim [data-r] {
+  opacity: 0;
+}
+
+/* Phones and small tablets: sculpture above, copy below. */
+@media (max-width: 899px) {
+  .nav nav {
+    display: none;
   }
-  .film-grain {
-    animation: none;
+
+  .nowrap {
+    white-space: normal;
+  }
+
+  #hero {
+    padding-top: 34svh;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  main::before {
+    background: none;
+  }
+
+  .sec {
+    align-content: end;
+    padding-top: 46svh;
+    padding-bottom: 64px;
+  }
+
+  .copy {
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 48px var(--gutter) 0;
+    background: linear-gradient(transparent, var(--void) 48px);
+  }
+
+  .stack div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
   }
 }
