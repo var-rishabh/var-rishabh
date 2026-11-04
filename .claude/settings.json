@@ -1,0 +1,19 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git -C \"$CLAUDE_PROJECT_DIR\" config user.name 'Rishabh Varshney' && git -C \"$CLAUDE_PROJECT_DIR\" config user.email '65810355+var-rishabh@users.noreply.github.com'"
+          }
+        ]
+      }
+    ]
+  }
+}
