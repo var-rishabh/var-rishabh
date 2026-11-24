@@ -15,7 +15,7 @@ const STEP_SCREENS = 0.8;
 function measureStops(): number[] {
   const vh = viewportHeight();
   const max = document.documentElement.scrollHeight - window.innerHeight;
-  const stops: number[] = [];
+  const stops: number[] = [0];
 
   for (const chapter of CHAPTERS) {
     const section = document.getElementById(chapter.id);

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Syne } from "next/font/google";
+import { Hanken_Grotesk, Syne } from "next/font/google";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
@@ -7,6 +7,13 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["600", "700", "800"],
   variable: "--font-display",
+  display: "swap",
+});
+
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-garden",
   display: "swap",
 });
 
@@ -29,7 +36,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${syne.variable} ${GeistMono.variable}`}>
+    <html lang="en" className={`${syne.variable} ${hanken.variable} ${GeistMono.variable}`}>
       <body className="bg-void font-mono text-silver antialiased">{children}</body>
     </html>
   );

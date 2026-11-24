@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useScroll } from "framer-motion";
 import Hud from "@/components/hud/Hud";
-import BootCurtain from "@/components/hud/BootCurtain";
+import SandGarden from "@/components/garden/SandGarden";
 import SnapStops from "@/components/hud/SnapStops";
 import Initialization from "@/components/chapters/Initialization";
 import RuntimeCore from "@/components/chapters/RuntimeCore";
@@ -42,6 +42,8 @@ export default function Home() {
 
   return (
     <>
+      <SandGarden />
+
       <div className="canvas-layer" aria-hidden>
         <SceneCanvas scrollProgress={scrollYProgress} onReady={markReady} />
       </div>
@@ -60,7 +62,6 @@ export default function Home() {
       <SnapStops container={mainRef} />
 
       <div className="film-grain" aria-hidden />
-      <BootCurtain ready={ready} />
     </>
   );
 }

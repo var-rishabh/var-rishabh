@@ -35,7 +35,7 @@ export default function Initialization({ ready }: { ready: boolean }) {
       <div className="flex w-full flex-col items-start justify-between gap-8 lg:flex-row lg:items-end lg:gap-10">
         <div className="scrim min-w-0 max-w-4xl flex-1">
           <ChapterTag index={0} aside="SYS.BOOT" />
-          <Headline as="h1" id="initialization-title" size="mega" lines={["Rishabh", "Varshney"]} className="mt-5" />
+          <Headline as="h2" id="initialization-title" size="mega" lines={["Rishabh", "Varshney"]} className="mt-5" />
           <motion.p variants={revealItem} className="mt-5 text-lg text-chrome sm:text-2xl">
             <span className="text-amber">{"//"}</span> {PROFILE.title}{" "}
             {PROFILE.focus.split(" · ").map((segment) => (
